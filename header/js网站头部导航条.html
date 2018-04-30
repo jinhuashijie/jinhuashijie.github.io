@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML css简洁导航</title>
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    font: 14px/15pt;
+    background: #dad8d9;
+}
+#nav{
+    width: 80%;
+    margin: 100px auto;
+    height: 46px;
+    border-radius: 8px;
+    border: 1px solid #cbcbcb;
+    border-bottom: 4px solid #adadad;
+    background: url(/jscss/demoimg/201403/navbg.png") 14.28% center no-repeat,
+    url(/jscss/demoimg/201403/navbg.png") 28.56% center no-repeat,
+    url(/jscss/demoimg/201403/navbg.png") 42.84% center no-repeat,
+    url(/jscss/demoimg/201403/navbg.png") 57.18% center no-repeat,
+    url(/jscss/demoimg/201403/navbg.png") 71.62% center no-repeat,
+    #f3f3f3 url(/jscss/demoimg/201403/navbg.png") 85.80% center no-repeat;
+}
+#nav a{
+    display: block;
+    width: 14.28%;
+    height: 46px;
+    line-height: 46px;
+    float: left;
+    border-bottom: 4px solid #adadad;
+    text-align: center;
+    text-decoration: none;
+    color: seagreen;
+}
+#nav a:first-child{
+    border-radius: 0 0 0 8px;
+}
+#nav a:last-child{
+    border-radius: 0 0 8px 0;
+}
+#nav a:hover{
+    border-bottom: 4px solid red;
+    color: red;
+}
+#nav a:first-child:hover{
+    border-bottom: 4px solid red;
+    border-radius: 0 0 0 8px;
+}
+#nav a:last-child:hover{
+    border-bottom: 4px solid red;
+}
+</style>
+</head>
+<body>
+<!--nav-->
+<div id="nav">
+    <a href="#">网站首页</a>
+    <a href="#">公司简介</a>
+    <a href="#">产品介绍</a>
+    <a href="#">经典案例</a>
+    <a href="#">企业动态</a>
+    <a href="#">在线留言</a>
+    <a href="#">通信地址</a>
+</div>
+</body>
+</html>

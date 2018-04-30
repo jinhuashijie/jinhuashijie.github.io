@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>无限级纯CSS菜单菜单</title>
+<style type="text/css">
+.nav{margin: 0;padding: 0;float: left;list-style: none;background: #222;}
+.nav a{color: #ddd;display: block;padding: 0 15px;text-decoration: none;}
+.nav a:hover{color: #2FAADD;}
+.nav .item{margin: 0;padding: 0;float: left;height: 35px;line-height: 35px;white-space: nowrap;}
+.nav .item:hover{position: relative;}
+.nav .item:hover>.nav{display: block;}.nav .nav{top: 100%;left: 0;display: none;background: #444;position: absolute;border: 1px solid #888;}
+.nav .nav .item{clear: both;min-width: 100%;}
+.nav .nav .nav{top: -1px;left: 100%;}
+.nav .nav .nav .nav .nav .nav{left: auto;right: 100%;}
+</style>
+</head>
+<body>
+<ul class="nav">
+	<li class="item"><a href="#">一级菜单 1</a>
+		<ul class="nav">
+			<li class="item"><a href="#">二级菜单 1</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+					<li class="item"><a href="#">三级菜单 4</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 2</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+					<li class="item"><a href="#">三级菜单 4</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 3</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 4</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 5</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="item"><a href="#">长长的一级菜单 2</a>
+		<ul class="nav">
+			<li class="item"><a href="#">二级菜单 1</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+					<li class="item"><a href="#">三级菜单 4</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 2</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">更长的二级菜单 3</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+					<li class="item"><a href="#">三级菜单 4</a></li>
+					<li class="item"><a href="#">有四级的菜单</a>
+						<ul class="nav">
+							<li class="item"><a href="#">四级菜单 1</a></li>
+							<li class="item"><a href="#">藏的很深的四级菜单 2</a>
+								<ul class="nav">
+									<li class="item"><a href="#">藏的更深的五级菜单 0</a></li>
+									<li class="item"><a href="#">五级菜单 1</a></li>
+									<li class="item"><a href="#">五级菜单 2</a></li>
+									<li class="item"><a href="#">五级菜单 3</a></li>
+										<ul class="nav">
+											<li class="item"><a href="#">在左边</a></li>
+											<li class="item"><a href="#">赖在左边</a></li>
+											<li class="item"><a href="#">左边好听</a></li>
+											<li class="item"><a href="#">双十一又要过节</a></li>
+											<li class="item"><a href="#">妹纸在哪里？</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="item"><a href="#">四级菜单 3</a></li>
+							<li class="item"><a href="#">四级菜单 4</a></li>
+							<li class="item"><a href="#">四级菜单 5</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 4</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+					<li class="item"><a href="#">三级菜单 4</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 5</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="item"><a href="#">一级菜单 3</a>
+		<ul class="nav">
+			<li class="item"><a href="#">二级菜单 1</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 2</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 3</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 4</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 5</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="item"><a href="#">一级菜单 4</a>
+		<ul class="nav">
+			<li class="item"><a href="#">二级菜单 1</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 2</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 3</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 4</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+					<li class="item"><a href="#">三级菜单 4</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 5</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="item"><a href="#">一级菜单 5</a>
+		<ul class="nav">
+			<li class="item"><a href="#">二级菜单 1</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 2</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 3</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 4</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">二级菜单 5</a>
+				<ul class="nav">
+					<li class="item"><a href="#">三级菜单 1</a></li>
+					<li class="item"><a href="#">三级菜单 2</a></li>
+					<li class="item"><a href="#">三级菜单 3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="item"><a target="_blank" href="/">源码爱好者</a></li>
+</ul>
+</body>
+</html>

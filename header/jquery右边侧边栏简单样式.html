@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jquery多级下拉侧导航amazonmenu</title>
+<style>
+.amazonmenu ul {
+font: normal 12px Verdana;
+list-style: none;
+margin: 0;
+padding: 0;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+.amazonmenu ul li {
+position: static; 
+}
+.amazonmenu > ul {
+background: white;
+border: 1px solid gray;
+border-radius: 5px;
+width: 200px;
+height: 400px;
+position: relative;
+}
+.amazonmenu > ul li a {
+color: black;
+display: block;
+overflow: auto;
+padding: 10px 0;
+position: relative;
+text-decoration: none;
+text-indent: 10px;
+}
+.amazonmenu > ul li.hassub > a::after {
+ border: 5px solid transparent;
+ border-left-color: gray;
+ content: '';
+ height: 0;
+ position: absolute;
+ right: 5px;
+ top: 35%;
+ width: 0;
+}
+.amazonmenu > ul li.hassub.selected > a::after {
+ border-left-color: red;
+}
+.amazonmenu ul li a:hover, .amazonmenu ul li.hassub.selected > a {
+background: lightblue;
+color: navy;
+}
+.amazonmenu ul li > div, .amazonmenu ul li > ul {
+background: white;
+border: 1px solid gray;
+border-radius: 0 8px 8px 0;
+box-shadow: 2px 2px 2px gray;
+display: none;
+font-weight: normal;
+width: 300px;
+height: 400px;
+left: 100%;
+padding: 10px;
+position: absolute;
+top: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+z-index: 1000;
+}
+/* CSS Media queries */
+@media screen and (max-width: 480px) {
+ .amazonmenu ul li > div, .amazonmenu ul li > ul {
+ left: 30px;
+}
+.amazonmenu > ul li.hassub.selected::after {
+ background: #eee;
+ content: '';
+ height: 100%;
+ left: 0;
+ opacity: .8;
+ pointer-events: none;
+ position: absolute;
+ top: 0;
+ width: 100%;
+ z-index: 1;
+}
+}
+</style>
+<script src="http://www.codefans.net/ajaxjs/jquery-1.9.1.min.js"></script>
+<script>
+document.createElement("nav") // for IE
+var amazonmenu = {
+	defaults: {
+		animateduration: 100,
+		showhidedelay: [100, 100],
+		hidemenuonclick: true
+	},
+	setting: {},
+	menuzindex: 1000,
+	touchenabled: !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || !!window.ontouchstart || !!window.Touch || !!window.onmsgesturechange || (window.DocumentTouch && window.document instanceof window.DocumentTouch),
+	showhide:function($li, action, setting){
+		clearTimeout( $li.data('showhidetimer') )
+		if (action == 'show'){
+			$li.data().showhidetimer = setTimeout(function(){
+				$li.addClass('selected')
+				$li.data('$submenu')
+					.data('fullyvisible', false)
+					.css({zIndex: amazonmenu.menuzindex++})
+					.fadeIn(setting.animateduration, function(){
+						$(this).data('fullyvisible', true)
+					})
+				}, this.setting.showhidedelay[0])
+		}
+		else{
+			$li.data().showhidetimer = setTimeout(function(){
+				$li.removeClass('selected')
+				$li.data('$submenu').stop(true, true).fadeOut(setting.animateduration)
+				var $subuls = $li.data('$submenu').find('.issub').css({display: 'none'})
+				if ($subuls.length > 0){
+					$subuls.data('$parentli').removeClass('selected')
+				}
+			}, this.setting.showhidedelay[1])
+		}
+	},
+	setupmenu:function($menu, setting){
+		var $topul = $menu.children('ul:eq(0)')
+		function addevtstring(cond, evtstr){
+			return (cond)? ' ' + evtstr : ''
+		}
+		$topul.find('li>div, li>ul').each(function(){ // find drop down elements
+			var $parentli = $(this).parent('li')
+			var $dropdown = $(this)
+			$parentli
+				.addClass('hassub')
+				.data({$submenu: $dropdown, showhidetimer: null})
+				.on('mouseenter click', function(e){
+					amazonmenu.showhide($(this), 'show', setting)
+				})
+				.on('click', function(e){
+					e.stopPropagation()
+				})
+				.children('a').on('click', function(e){
+					e.preventDefault() // prevent menu anchor links from firing
+				})
+			$dropdown
+				.addClass('issub')
+				.data({$parentli: $parentli})
+				.on('mouseleave' + addevtstring(setting.hidemenuonclick || amazonmenu.touchenabled, 'click'), function(e){
+					if ($(this).data('fullyvisible') == true){
+						amazonmenu.showhide($(this).data('$parentli'), 'hide', setting)
+					}
+					if (e.type == 'click'){
+						e.stopPropagation()
+					}
+				})
+		}) // end find
+		$topul.on('click', function(e){
+			if ($(this).data('fullyvisible') == true){
+				amazonmenu.showhide($(this).children('li.hassub.selected'), 'hide', setting)
+			}
+		})
+		var $mainlis = $topul.children('li.hassub').on('mouseleave', function(){
+			amazonmenu.showhide($(this), 'hide', setting)		
+		})
+	},
+	init:function(options){
+		var $menu = $('#' + options.menuid)
+		this.setting = $.extend({}, options, this.defaults)
+		this.setting.animateduration = Math.max(50, this.setting.animateduration)
+		this.setupmenu($menu, this.setting)
+	}
+}
+</script>
+<script>
+jQuery(function(){
+	amazonmenu.init({
+		menuid: 'mysidebarmenu'
+	})
+})
+</script>
+</head>
+<body>
+<nav id="mysidebarmenu" class="amazonmenu">
+	<ul>
+	<li><a href="/">Item 1</a></li>
+	<li><a href="/">Folder 0</a>
+		<div>
+			<p>Browse our spring collection of useful webmaster tools and resources! </p>
+		  <ul>
+		  <li><a href="#">JavaScript</a></li>
+		  <li><a href="#">CSS类</a></li>
+		  <li><a href="#">CSS库</a>
+		  <li><a href="#">网站工具</a>
+			<div>
+			<p><h3><a href="/">Image Optimizer</a></h3>Use this tool to easily optimize regular gifs, animated gifs. </p>
+			<p><h3><a href="/">我的收藏夹</a></h3>Generate a favicon using any regular image with this tool. </p>
+			<p><h3><a href="/">动画GIF</a></h3>Animated Gif Generator lets you easily create an animated gif。</p>
+			</div>
+		  <li><a href="/">PHP程序设计</a></li>
+		  </ul>
+		</div>
+	</li>
+	<li><a href="http://www.codefans.net">Folder 1</a>
+	  <ul>
+	  <li><a href="/">Sub Item 1.1</a></li>
+	  <li><a href="/">Sub Item 1.2</a></li>
+	  <li><a href="/">Sub Item 1.3</a>
+			<ul>
+				<li>Sub Item 1.3.1</li>
+				<li>Sub Item 1.3.2</li>
+				<li>Sub Item 1.3.3</li>
+			</ul>
+		</li>
+	  <li><a href="/">Sub Item 1.4</a></li>
+	  <li><a href="/">Sub Item 1.2</a></li>
+	  <li><a href="/">Sub Item 1.3</a></li>
+	  <li><a href="/">Sub Item 1.4</a></li>
+	  </ul>
+	</li>
+	<li><a href="/">Item 3</a></li>
+	<li><a href="/">Folder 2</a>
+	  <ul>
+	  <li><a href="/">Sub Item 2.1</a></li>
+	  <li><a href="/">Sub Item 2.1</a></li>
+	  <li><a href="/">Sub Item 2.1</a></li>
+	  <li><a href="/">Sub Item 2.1</a></li>
+	  <li><a href="/">Sub Item 2.1</a></li>
+	  <li><a href="/">Sub Item 2.1</a></li>
+	  </ul>
+	</li>
+	<li><a href="/">Item 4</a></li>
+	</ul>
+</nav>
+</body>
+</html>

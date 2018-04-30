@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>橘红色滑动导航菜单改良版</title>
+<style>
+body {font-family:\5B8B\4F53,Arial Narrow,arial,serif;background:#ffffff;font-size:12px;}
+body,div,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,textarea,blockquote,emBED{padding:0; margin:0;}
+li{list-style-type:none;}
+a {color:#2b2b2b;text-decoration:none;}
+a:visited {color:#2b2b2b;text-decoration:none;}
+a:hover {color:#ff0000;text-decoration:underline;}
+a:active {color:#2b2b2b;}
+/*主导航菜单*/
+#menu ul{padding:0;border:0;list-style:none;line-height:150%;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 15px;}
+#menu_out{width:975px;padding-left:5px;margin-left:auto;margin-right:auto;	background:url('image/gif/menu_left.gif') no-repeat left top;}
+#menu_in{background:url('image/gif/menu_right.gif') no-repeat right top;padding-right:5px;}
+#menu{background:url('image/gif/menu_bg.gif') repeat-x;height:73px;position:relative; left:0px; top:0px;}
+.menu_line{	background:url('image/gif/menu_line.gif') no-repeat center top;	width:8px;}
+.menu_line2{background:url('image/gif/menu_line2.gif') no-repeat center top;width:15px;}
+#nav{padding-left:20px;}
+#nav li{float:left;height:35px;}
+#nav li a{float:left;display:block;padding-left:9px;height:37px;background:url('image/gif/menu_on_left.gif') no-repeat left top;cursor:pointer;text-decoration:none;}
+#nav li a span{float:left;padding:13px 24px 10px 20px;line-height:14px;background:url('image/gif/menu_on_right.gif') no-repeat right top;font-size:14px;font-weight:bold;color:#FFFFFF;text-decoration:none;}
+#nav li .nav_on{/*鼠标经过时变换背景，方便JS获取样式*/background-position:left 100%;}
+#nav li .nav_on span{/*鼠标经过时变换背景，方便JS获取样式*/background-position:right 100%;color:#333333;text-decoration:none;padding:14px 24px 9px 20px;}
+/*子栏目*/
+#menu_con{text-align:left;padding-left:20px;clear:both;}
+#menu_con li{float:left;height:22px;margin-top:8px;}
+#menu_con li a{display:block;float:left;background:url('image/gif/menu_on_left2.gif') no-repeat left top;cursor:pointer;padding-left:3px;}
+#menu_con li a span{float:left;padding:6px 10px 4px 10px;line-height:12px;background:url('image/gif/menu_on_right2.gif') no-repeat right top;}
+#menu_con li a:hover{text-decoration:none;background:url('image/gif/menu_on_left2.gif') no-repeat left bottom;}
+#menu_con li a:hover span{background:url('image/gif/menu_on_right2.gif') no-repeat right bottom;}
+/*子栏目位置 */
+#qh_con0 { position:absolute;top:35px;left: 20px; }
+#qh_con1 { position:absolute;top:35px;left: 50px; }
+#qh_con2 { position:absolute;top:35px;left: 156px; }
+#qh_con3 { position:absolute;top:35px;left: 272px; }
+#qh_con4 { position:absolute;top:35px;left: 380px; }
+#qh_con5 { position:absolute;top:35px;left: 480px;}
+#qh_con6 { position:absolute;top:35px;left:auto;right:20px;}
+#qh_con7 { position:absolute;top:35px;left: auto;right:20px;}
+</style>
+</head>
+<body><br /><br />
+<div id=menu_out>
+<div id=menu_in>
+<div id=menu>
+<UL id=nav>
+<LI><A class=nav_on id=mynav0 onmouseover=javascript:qiehuan(0) href="/"><SPAN>首 页</SPAN></A></LI>
+<LI class="menu_line"></LI>
+<li><a href="#" onmouseover="javascript:qiehuan(1)" id="mynav1" class="nav_off"><span>源码爱好者</span></a></li>
+<li class="menu_line"></li>
+<li><a href="#" onmouseover="javascript:qiehuan(2)" id="mynav2" class="nav_off"><span>导航条代码</span></a></li>
+<li class="menu_line"></li>
+<li><a href="#" onmouseover="javascript:qiehuan(3)" id="mynav3" class="nav_off"><span>网络营销</span></a></li>
+<li class="menu_line"></li>
+<li><a href="#" onmouseover="javascript:qiehuan(4)" id="mynav4" class="nav_off"><span>电子商务</span></a></li>
+<li class="menu_line"></li>
+<li><a href="#" onmouseover="javascript:qiehuan(5)" id="mynav5" class="nav_off"><span>源码爱好者</span></a></li>
+<li class="menu_line"></li>
+<li><a href="#" onmouseover="javascript:qiehuan(6)" id="mynav6" class="nav_off"><span>网页素材</span></a></li>
+</UL>
+<div id=menu_con>
+<div id=qh_con0 style="DISPLAY: block">
+<UL>
+  <LI><a href="/"><span>导航条代码</span></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网站建设</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网页制作</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网络营销</SPAN></A></LI>
+</UL>
+</div>
+ 
+<div id=qh_con1 style="DISPLAY: none">
+<UL>
+  <LI><a href="#"><span>导航条代码</span></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网页设计</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网站建设</SPAN></A></LI>
+</UL>
+</div> 
+<div id=qh_con2 style="DISPLAY: none">
+<UL>
+  <LI><a href="#"><span>营销外包</span></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>SEO优化</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网站建设</SPAN></A></LI>
+</UL>
+</div> 
+<div id=qh_con3 style="DISPLAY: none">
+<UL>
+  <LI><a href="#"><span>电子商务</span></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>SEO优化</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>导航条代码</SPAN></A></LI>
+</UL>
+</div> 
+<div id=qh_con4 style="DISPLAY: none">
+<UL>
+  <LI><a href="#"><span>电子商务</span></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网站建设</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>导航条代码</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>电子商务</SPAN></A></LI>
+</UL>
+</div>
+<div id=qh_con5 style="DISPLAY: none">
+<UL>
+  <LI><a href="#"><span>SEO优化</span></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>网站推广</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>导航条代码</SPAN></A></LI>
+</UL>
+</div>
+<div id=qh_con6 style="DISPLAY: none">
+<UL>
+  <LI><a href="#"><span>网站推广</span></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>导航条代码</SPAN></A></LI>
+  <LI class=menu_line2></LI>
+  <LI><A href="#"><SPAN>SEO优化</SPAN></A></LI>
+</UL>
+</div>
+</div>
+</div></div></div> 
+<br /><br />
+</body>
+
+<script language="javascript">
+function qiehuan(num){
+  for(var id = 0;id<=7;id++)
+  {
+    if(id==num)
+    {
+      document.getElementById("qh_con"+id).style.display="block";
+      document.getElementById("mynav"+id).className="nav_on";
+    }
+    else
+    {
+      document.getElementById("qh_con"+id).style.display="none";
+      document.getElementById("mynav"+id).className="";
+    }
+  }
+}
+window.onload=qiehuan;
+</script> 
+<!-- 
+readme
+1：页面用js存在报错，不影响使用，强制不报错讲属性换成jquery的hide，show；
+
+ -->
+</html>
