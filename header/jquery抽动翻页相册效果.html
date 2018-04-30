@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery炫酷翻页图片相册</title>
+<style>
+body{ overflow:hidden;}
+a{ text-decoration:none; color:#FFF;}
+a img{ border:none;}
+.img-box,.img-box div,.img-box div img{ width:800px; height:450px; }
+.img-box{ margin:auto;position:relative; }
+.img-box span{ position:absolute;bottom:0;left:295px; width:201px;font-size:12px; line-height:25px;color:#FFF; z-index:100; background:#555; text-align:center;}
+.img-box div{ position: absolute;cursor: all-scroll }
+.btn-box{ width:800px; height:40px;margin: auto; cursor:pointer; background:#222; }
+.btn-margin{ width:210px; height:40px; margin: auto;}
+.btn{ width:100px; height:38px; line-height:38px; margin:1px 1px 0 0;  text-align:center; float:left;color:#FFF;  background:#555; }
+</style>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+  var   ImgBox = $(".img-box"),
+  ImgSpan =ImgBox.find("span"),
+  ImgDiv = $(".img-box div"),
+  BtnNext = $("#btn-next"),
+  BtnPrve = $("#btn-prev"),
+  Btn = $(".btn"),
+  speed = 600,//设置动画的运动时间
+  Tick = 4000+speed,//设置定时器的间隔时间
+  n=1,//设置张数计数器
+  whichCl ,//设置判断点击了哪一个按钮
+  z=0;//设置当前动画计数器
+  ImgSpan.html("第 "+n+" 张/共 "+ImgDiv.length+" 张");
+  function Slider(){//动画函数
+	  if(whichCl=="nextCl"){
+		      n++; if(n>ImgDiv.length){n=1;}
+	          z--; if(z<0){z=ImgDiv.length-1;}
+		 }
+	  if(whichCl=="prevCl"){ n--; if(n<1){n=ImgDiv.length;}}
+	  ImgSpan.html("第 "+n+" 张/共 "+ImgDiv.length+" 张");
+	  ImgDiv.eq(z).stop().animate(
+	       {right:-(1.1*ImgDiv.width())}, speed,
+	        function(){
+	                     if(whichCl=="nextCl"){ImgSpan.after($(this));}
+	                     if(whichCl=="prevCl"){ImgBox.append($(this));}
+	                     $(this).stop().animate({right:0}, speed);
+	                   })
+	  if(whichCl=="prevCl"){ z++; if(z>ImgDiv.length-1){z=0;}}
+	  ImgBox.stop().animate({right:100},speed,function(){$(this).stop().animate({right:0}, speed)})
+	  ImgSpan.stop().animate({left:395},speed,function(){$(this).stop().animate({left:295},speed)})
+	  }
+  BtnNext.click(next_cl = function(){whichCl="nextCl";Slider();});//向右点击事件启动动画函数
+  BtnPrve.click(prev_cl = function(){whichCl="prevCl";Slider();});//向左点击事件启动动画函数
+  Btn.hover(function(){clearTimeout(autoTime)},function(){autoTime = setInterval(next_cl,Tick);})//当鼠标进入点击按钮时对定时器进行控制
+  autoTime = setInterval(next_cl,Tick);	//模拟向右点击事件定时启动动画函数，也可以使用  prev_cl向左启动动画函数
+});
+</script>
+</head>
+<body>
+<div class="img-box">
+         <span></span>
+          <div><a href="/"><img src="image/wall1.jpg" /></a></div>
+          <div><a href="/"><img src="image/wall2.jpg" /></a></div>
+          <div><a href="/"><img src="image/wall3.jpg" /></a></div>
+          <div><a href="/"><img src="image/wall4.jpg" /></a></div>
+</div>
+<div class="btn-box">
+    <div class="btn-margin">
+        <div class="btn" id="btn-prev">上一张</div>
+        <div class="btn" id="btn-next">下一张</div>
+    </div>
+</div>
+<div style="text-align:center;clear:both">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>
+</div>
+</body>
+</html>

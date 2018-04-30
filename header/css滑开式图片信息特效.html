@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图像管理菜单</title>
+<style>
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
+    display: block;
+}
+audio,canvas,video {
+    display: inline-block;
+}
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+[hidden] {
+    display: none;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    margin: 0;
+}
+a:focus {
+    outline: thin dotted;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+b,strong {
+    font-weight: bold;
+}
+dfn {
+    font-style: italic;
+}
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+mark {
+    background: #ff0;
+    color: #000;
+}
+code,kbd,pre,samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+pre {
+    white-space: pre-wrap;
+}
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+small {
+    font-size: 80%;
+}
+sub,sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+img {
+    border: 0;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+figure {
+    margin: 0;
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+legend {
+    border: 0;
+    padding: 0;
+}
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+button,
+input {
+    line-height: normal;
+}
+button,select {
+    text-transform: none;
+}
+button,html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,100,700|Oswald:400,700,300);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.asset {
+  position: relative;
+  width: 98%;
+  margin: 1%;
+  padding: 1%;
+  background: #ff3814;
+  float: left;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  .asset {
+    width: 48%;
+  }
+}
+@media (min-width: 1000px) {
+  .asset {
+    width: 31%;
+  }
+}
+.asset:hover .asset__actions {
+  left: 0;
+}
+.asset .asset__wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+.asset .asset__wrapper img {
+  position: absolute;
+  top: 0;
+  left:0;
+  height: 100%;
+  transform: translateX(-50%);
+}
+.asset .asset__actions {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  background: rgba(40, 40, 40, 0.95);
+  overflow: hidden;
+  z-index: 100;
+  transition: left 0.25s;
+}
+.asset .asset__actions [class^=asset__actions--] {
+  width: 100%;
+  padding-left: 4em;
+  font-size: 0.75em;
+  line-height: 3.125;
+  cursor: pointer;
+}
+.asset .asset__actions [class^=asset__actions--]:hover, .asset .asset__actions [class^=asset__actions--]:hover i {
+  background: tomato;
+  color: white;
+}
+.asset .asset__actions [class^=asset__actions--] i {
+  box-sizing: content-box;
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  padding: 0.7em;
+  background: transparent;
+  font-size: 1.25em;
+  line-height: 1;
+  text-align: center;
+}
+.asset .asset__actions [class*=deleteAsset] {
+  margin: 10% 0;
+  color: #e02200;
+}
+.asset .asset__actions [class*=deleteAsset] i {
+  background: none;
+}
+/** GLOBAL STYLES **/
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: tomato;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
+  line-height: 1.5;
+  font-weight: 300;
+  color: white;
+}
+h1 {
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}</style>
+</head>
+<body>
+  <h1>Image Management Thing</h1>
+<div class="container">
+  <div class="asset">
+    <div class="asset__wrapper">
+      <img src="image/demoimg/wall2.jpg" />
+    </div>
+    <div class="asset__actions">
+      <div class="asset__actions--addCaption">
+        <i class="fa fa-expand"></i> 全屏查看
+      </div>
+      <div class="asset__actions--addCaption">
+        <i class="fa fa-plus"></i> 添加备注
+      </div>
+      <div class="asset__actions--makeFeatured">
+        <i class="fa fa-star"></i> Make Featured
+      </div>
+      <div class="asset__actions--deleteAsset">
+        <i class="fa fa-times"></i>删除
+      </div>
+    </div>
+  </div>
+  <div class="asset">
+    <div class="asset__wrapper">
+      <img src="image/demoimg/wall3.jpg" />
+    </div>
+    <div class="asset__actions">
+      <div class="asset__actions--addCaption">
+        <i class="fa fa-expand"></i> 全屏
+      </div>
+      <div class="asset__actions--addCaption">
+        <i class="fa fa-plus"></i> 添加描述
+      </div>
+      <div class="asset__actions--addCaption">
+        <i class="fa fa-share"></i> 分享
+      </div>
+      <div class="asset__actions--makeFeatured">
+        <i class="fa fa-star"></i> Make Featured
+      </div>
+      <div class="asset__actions--deleteAsset">
+        <i class="fa fa-times"></i>删除
+      </div>
+    </div>
+  </div>
+  <div class="asset">
+    <div class="asset__wrapper">
+      <img src="image/demoimg/wall4.jpg" />
+    </div>
+    <div class="asset__actions">
+      <div class="asset__actions--addCaption">
+        <i class="fa fa-expand"></i> View Full Image
+      </div>
+      <div class="asset__actions--addCaption">
+        <i class="fa fa-pencil"></i> Edit Caption
+      </div>
+      <div class="asset__actions--makeFeatured">
+        <i class="fa fa-star"></i> Make Featured
+      </div>
+      <div class="asset__actions--deleteAsset">
+        <i class="fa fa-times"></i> Delete Asset
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+</body>
+</html>

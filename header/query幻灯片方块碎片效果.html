@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jquery图片特效slider插件</title>
+<style type="text/css">
+@charset "utf-8";
+.jquery-slider-wrapper{position:relative;zoom:1;clear:both}
+.jquery-slider-slide{position:absolute;padding-bottom:0px;margin:0px;padding-left:0px;width:100%;padding-right:0px;display:none;float:left;padding-top:0px}
+.jquery-slider-slide img{border-bottom:0px;border-left:0px;padding-bottom:0px;margin:0px;padding-left:0px;padding-right:0px;border-top:0px;border-right:0px;padding-top:0px}
+.jquery-slider-slide-current{z-index:2;display:block}
+.jquery-slider-slide-next{z-index:1;display:block}
+.jquery-slider-selectors{z-index:3;position:absolute;bottom:10px;display:block;overflow:hidden;right:10px}
+.jquery-slider-selector{margin:0px 0px 0px 5px;width:16px;display:inline;background:url(/jscss/demoimg/201402/jquery-slider-theme.png) no-repeat 0px -70px;float:left;height:16px}
+.jquery-slider-selector-current{background:url(/jscss/demoimg/201402/jquery-slider-theme.png) no-repeat -16px -70px}
+.jquery-slider-selector span{display:none}
+.jquery-slider-control{z-index:4;position:absolute;margin-top:-34px;width:48px;display:none;height:69px;top:50%;cursor:pointer;right:50%;margin-right:-24px}
+.jquery-slider-control span{display:none}
+.jquery-slider-control-play{background:url(/jscss/demoimg/201402/jquery-slider-theme.png) no-repeat -144px 0px}
+.jquery-slider-control-pause{background:url(/jscss/demoimg/201402/jquery-slider-theme.png) no-repeat -96px 0px}
+.jquery-slider-hovered .jquery-slider-control{display:block}
+.jquery-slider-navigation{display:block}
+.jquery-slider-navigation-prev{z-index:4;position:absolute;margin-top:-34px;width:48px;display:none;background:url(/jscss/demoimg/201402/jquery-slider-theme.png) no-repeat 0px 0px;height:69px;top:50%;cursor:pointer;left:0px}
+.jquery-slider-navigation-prev span{display:none}
+.jquery-slider-navigation-next{z-index:4;position:absolute;margin-top:-34px;width:48px;display:none;background:url(image/jquery-slider-theme.png) no-repeat -48px 0px;height:69px;top:50%;cursor:pointer;right:0px}
+.jquery-slider-navigation-next span{display:none}
+.jquery-slider-hovered .jquery-slider-navigation-prev{display:block}
+.jquery-slider-hovered .jquery-slider-navigation-next{display:block}
+.jquery-slider-wrapper .caption{position:absolute;padding-bottom:6px;padding-left:10px;bottom:10px;padding-right:10px;background:#333333;color:#ffffff;font-size:13px;padding-top:6px;left:10px}
+.jquery-slider-timer{z-index:4;position:absolute;width:100%;bottom:0px;height:3px;color:#000000;left:0px}
+.jquery-slider-timer-bar{width:0px;display:inline;background:#000000;float:left;height:3px;opacity:0.5}
+.slider{width:900px;height:325px;overflow:hidden;}
+</style>
+<script type="text/javascript" src="http://www.codefans.net/ajaxjs/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="http://www.codefans.net/jscss/demoimg/201402/jquery.slider.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".slider").slideshow({
+		width      : 900,
+		height     : 325,
+		transition : 'explode'
+	});
+});
+</script>
+</head>
+<body>
+	<div class="slider">
+		<div><img src="image/slide_1.jpg" alt=""/></div>
+		<div><img src="image/slide_2.jpg" alt=""/></div>
+		<div><img src="image/slide_3.jpg" alt=""/></div>
+		<div><img src="image/slide_4.jpg" alt=""/></div>
+	</div>
+</body>
+<!-- 
+readme
+1:jquery只能用老版本，新版本是没用的，根本运作不起来
+
+ -->
+</html>

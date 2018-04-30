@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5图片库</title>
+<style>html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+html {background: #E4E4E4;}
+body {padding: 1px;font-family: 'Titillium Web', sans-serif;font-size: 16px;font-weight: 300;line-height: 22px;color: #666;}
+h1,h2,h3 {font-weight: 600;}
+a {text-decoration: none;}
+/* TITLES*/
+.pageTitle {
+	display: block;
+	margin: 0 0 0.2em 0;
+	font-size: 2.2em;
+	line-height: 1em;
+	color: #3CA0D0;
+}
+.pageSubtitle {
+	display: block;
+	margin: 0 0 0.4em 0;
+	font-size: 1.4em;
+	line-height: 1em;
+	color: #333;
+}
+/* EFFECTS */
+.roundedCorners {
+	-webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.roundedCornersTop {
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+.roundedCornersBottom {
+	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+.boxShadow {
+	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+/* LAYOUT*/
+.wrapper {width: 600px;margin: 20px auto;}
+.top {width: 100%;min-height: 300px;padding: 20px 0;text-align: center;}
+.main {width: 96%;padding: 2% 2% 5% 2%;margin: 5% 0;background: none;border-bottom: solid 1px #ccc;}
+.footer {width: 96%;padding: 2%;background: #222;border-top:solid 3px #086FA1;}
+/* GALLERY*/
+.galleryItem {
+	display: inline-block;;
+	position: relative;
+	width: 250px;
+	height: 250px;
+	padding: 0;
+	margin: 0 20px;
+	border: solid 10px #fff;
+	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.galleryItem img {width: 250px;height: 250px;}
+.caption {position: relative;display: inline-block;width: 250px;height: 250px;z-index: 10;}
+.caption::before {
+	content: attr(data-title);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 0;
+	font-family: 'Croissant One', cursive;
+	font-size: 1.8em;
+	font-weight: 600;
+	line-height: 1.4em;
+	color: #086FA1;
+	background: #fff;
+	overflow: hidden;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.caption::after {
+	content: attr(data-description);
+	position: absolute;
+	bottom: -0;
+	left: 0;
+	width: 250px;
+	height: 0;
+	font-family: 'Poiret One', cursive;
+	font-size: 1.1em;
+	font-weight: 400;
+	line-height: 1.4em;
+	color: #fff;
+	background: #222;
+	overflow: hidden;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.caption:hover::before {height: 125px;}
+.caption:hover::after {	bottom: 0;height: 125px;}
+</style>
+</head>
+<body>
+<ul class="top">
+  <li class="galleryItem">
+		<a class="caption" href="#"  data-title="Colored landscape" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id sapien condimentum, sagittis erat rhoncus, bibendum nisi.">
+	    	<img src="image/2.jpg" alt="Landscape image">
+		</a>
+	</li>
+  <li class="galleryItem">
+		<a class="caption" href="#"  data-title="Colored landscape" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id sapien condimentum, sagittis erat rhoncus, bibendum nisi.">
+	    	<img src="image/3.jpg" alt="Landscape image">
+		</a>
+	</li>
+	<li class="galleryItem">
+		<a class="caption" href="#" data-title="Black & white photo" data-description="Vivamus ut sem id magna consequat porta vitae ut sem. Proin eget commodo risus, vitae blandit velit. ">
+	    	<img src="image/5.jpg" alt="Landscape image">
+		</a>
+	</li
+</ul>
+</body>
+</html>

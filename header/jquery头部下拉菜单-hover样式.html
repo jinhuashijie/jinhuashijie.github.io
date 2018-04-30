@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jquery缓冲下拉导航菜单特效</title>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+<style>
+body,form,ul{margin:0px; padding:0px;}
+body{font-size:12px;}
+.clear{clear:both}
+div.examples_body {
+width: 750px;
+margin: 50px auto;
+}
+h2.title_name {
+     font-family: normal Georgia,'Times New Roman',Times,serif;
+ font-weight: normal;
+     font-size: 4em;
+     padding: 50px 0 20px 0;
+     text-align: center;
+}
+h2.title_name span {
+     font-family: normal Georgia,'Times New Roman',Times,serif;
+     color: #AAA;
+     font-size: 0.9em;
+}
+h2.title_name small {
+     color: #AAAAAA;
+     display: block;
+     font-family: normal Verdana,Arial,Helvetica,sans-serif;
+     font-size: 0.2em;
+     letter-spacing: 1.0em;
+     text-transform: uppercase;
+}
+div.examples_body h3 {
+    color: #555;
+    font-size: 130%;
+ padding-bottom: 15px;
+ margin-bottom: 15px;
+}
+p.demo_btn {
+ width: 750px;
+ margin: 30px auto;
+ font-size: 0;
+ text-indent: -9999px;
+ clear: both;
+ overflow: hidden;
+}
+p.demo_btn a {
+ width: 160px;
+ height: 41px;
+ float: right;
+background: url(/jscss/demoimg/201404/Download_Button.gif) no-repeat;
+}
+p.demo_btn a:hover {
+background: url(/jscss/demoimg/201404/Download_Button_o.gif) no-repeat;
+}
+div.examples_body_wrap h3 {
+color: #f9f66d;
+ font-size: 130%;
+ padding-bottom: 15px;
+ margin-bottom: 15px;
+ background: url(/jscss/demoimg/201404/solid-line-news.gif) repeat-x bottom;
+}
+div.examples_body_wrap {
+width: 750px;
+margin: 50px auto 0 auto;
+clear: both;
+}
+ul.topnav {
+width: 710px;
+float: left;
+background: #222;
+background: url(/jscss/demoimg/201404/topnav_bg.gif) repeat-x;
+}
+ul.topnav li {
+float: left;
+margin: 0;
+padding: 0 10px 0 15px;
+position: relative;
+display: inline;
+}
+ul.topnav li a { 
+padding: 10px 5px;
+color: #fff;
+display: block;
+text-decoration: none;
+float: left;
+}
+ul.topnav li a:hover {
+-moz-border-radius: 3px;
+-khtml-border-radius: 3px;
+-webkit-border-radius: 3px;
+}
+ul.topnav li span {
+width: 17px;
+height: 35px;
+float: left;
+background: url(/jscss/demoimg/201404/subnav_btn.gif) no-repeat center top;
+}
+ul.topnav li span.subhover {
+    background-position: center bottom; cursor: pointer;
+}   
+ul.topnav li ul.subnav {
+width: 170px;
+position: absolute;
+left: 0; top: 35px;
+background: #333;
+margin: 0; padding: 0;
+display: none;
+float: left;
+border: 1px solid #111;
+}
+ul.topnav li ul.subnav li{
+width: 170px;
+margin: 0; padding: 0;
+border-top: 1px solid #252525;
+border-bottom: 1px solid #444;
+clear: both;
+}
+html ul.topnav li ul.subnav li a {
+    width: 145px;
+    float: left;
+    background-color: #333;
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+html ul.topnav li ul.subnav li a:hover {
+    background-color: #222;
+}
+</style>
+</head>
+<body>
+<div class="examples_body">
+    <ul class="topnav">
+        <li><a href="#">下拉菜单0</a></li>
+        <li>
+        <a href="#">下拉菜单1</a>
+        <ul class="subnav">
+        <li><a href="#">下拉子菜单</a></li>
+        <li><a href="#">下拉子菜单</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="#">下拉菜单2</a>
+        <ul class="subnav">
+        <li><a href="#">下拉子菜单</a></li>
+        <li><a href="#">下拉子菜单</a></li>
+        <li><a href="#">下拉子菜单</a></li>
+        <li><a href="#">下拉子菜单</a></li>
+        <li><a href="#">下拉子菜单</a></li>
+        </ul>
+        </li>
+        <li><a href="#">下拉菜单3</a>
+        <ul class="subnav">
+        <li><a href="#">下拉子菜单</a></li>
+        <li><a href="#">下拉子菜单</a></li>
+        <li><a href="#">下拉子菜单</a></li>
+        </ul>
+        </li>
+        <li><a href="#">下拉菜单4</a></li>
+        <li><a href="#">下拉菜单5</a></li>
+    </ul>
+<!-- Examples body -->
+</div>
+<div class="clear"></div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("ul.subnav").parent().append("<span></span>");
+    $("ul.topnav li span").mouseover(function() {
+        $(this).parent().find("ul.subnav").slideDown('fast').show();
+        $(this).parent().hover(function() {
+        }, function(){
+            $(this).parent().find("ul.subnav").slideUp('slow');
+        });
+        }).hover(function() {
+            $(this).addClass("subhover");
+        }, function(){
+            $(this).removeClass("subhover");
+    });
+});
+</script>
+</html>
