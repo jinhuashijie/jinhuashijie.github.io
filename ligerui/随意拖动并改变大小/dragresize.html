@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">  
+<link href="css/ligerui-all.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/base.js" type="text/javascript"></script>
+<script src="js/ligerResizable.js" type="text/javascript"></script>
+<script src="js/ligerDrag.js" type="text/javascript"></script>
+<style type="text/css">
+</style>
+</head>
+<body>   
+  <div id="rr1" style="width: 200px; height: 300px; top: 130px; left: 200px; background: rgb(166, 219, 216); z-index: 1; position: absolute; cursor: move;"> </div>
+ 
+   <div id="rr2" style="width: 200px; height: 300px; top: 30px; left: 340px; background: rgb(175, 204, 241); z-index: 2; position: absolute; cursor: move;">
+    </div>
+ 
+   <div id="rr3" style="width: 200px; height: 200px; top: 150px; background: rgb(218, 145, 136); z-index: 3; position: absolute; cursor: move;"> </div>
+   <div style="display:none">
+    
+   </div>
+</body>
+<script type="text/javascript">
+      $(function ()
+        {
+            $('#rr1,#rr2,#rr3').ligerDrag(); 
+            $('#rr1,#rr2,#rr3').ligerResizable();
+        });
+</script>
+</html>
+<!-- 
+1:首先引入jquery
+2：然后引入base.js
+3：ligerResizable.js  引入这一个组件已经可以成功调整大小
+4：前面不成功是因为引入的顺序不对；
+5：plugns文件夹是可以不需要的
+6：core文件夹也是可以不要的
+
+ -->

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">  
+<link href="css/ligerui-all.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/base.js" type="text/javascript"></script>
+<script src="js/ligerDrag.js" type="text/javascript"></script>
+<link href="css/ligerui-icons.css" rel="stylesheet" type="text/css">
+<script src="js/ligerDialog.js" type="text/javascript"></script>
+<script src="js/ligerResizable.js" type="text/javascript"></script>
+<style type="text/css">
+    .l-case-title
+    {
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    body,html{width:100%; height:100%; background:#f1f1f1;}
+</style>
+</head>
+<body>   
+<div class="l-case-title"> 实例一 </div> 
+<div class="l-dialog l-dialog-win" style="left: 362.5px; top: 149.5px; z-index: 9200; cursor: default;" ligeruiid="Dialog1000"><table class="l-dialog-table" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="l-dialog-tl"></td><td class="l-dialog-tc"><div class="l-dialog-tc-inner"><div class="l-dialog-icon"></div><div class="l-dialog-title" style="cursor: move;">窗口1</div><div class="l-dialog-winbtns" style="width: 88px;"><div class="l-dialog-winbtn l-dialog-close"></div><div class="l-dialog-winbtn l-dialog-max"></div><div class="l-dialog-winbtn l-dialog-collapse"></div><div class="l-dialog-winbtn l-dialog-min"></div></div></div></td><td class="l-dialog-tr"></td></tr><tr><td class="l-dialog-cl"></td><td class="l-dialog-cc"><div class="l-dialog-body"> <div class="l-dialog-content l-dialog-content-noimage l-dialog-content-nopadding l-dialog-content-frame" style="height: auto;"><iframe frameborder="0" name="ligerwindow1525143726708" id="ligerwindow1525143726708" src="../../welcome.htm"></iframe></div><div class="l-dialog-buttons"><div class="l-dialog-buttons-inner"><div class="l-dialog-btn"><div class="l-dialog-btn-l"></div><div class="l-dialog-btn-r"></div><div class="l-dialog-btn-inner">取消</div></div><div class="l-dialog-btn"><div class="l-dialog-btn-l"></div><div class="l-dialog-btn-r"></div><div class="l-dialog-btn-inner">确定</div></div><div class="l-clear"></div></div></div><div class="l-dialog-loading" style="display: none;"></div></div></td><td class="l-dialog-cr"></td></tr><tr><td class="l-dialog-bl"></td><td class="l-dialog-bc"></td><td class="l-dialog-br"></td></tr></tbody></table></div>
+</body>
+<script type="text/javascript">
+    $.ligerui.controls.Dialog.prototype._borderX = 2;
+    $.ligerui.controls.Dialog.prototype._borderY = 0;
+</script>
+<script type="text/javascript">
+    var wincount = 0;
+    function title() {
+        return '窗口' + ++wincount;
+    }
+    function f_open1() {
+        $.ligerDialog.open({
+            height: 200, url: '../../welcome.htm', width: null,height:'auto', showMax: true, showToggle: true, showMin: true, isResize: true, modal: false, title: title(), buttons: [
+                { text: '确定', onclick: function (item, dialog) { alert(item.text); } },
+                { text: '取消', onclick: function (item, dialog) { dialog.close(); } }
+            ]
+        });
+    }
+    $(function ()
+    {
+        f_open1();
+    });
+</script>
+</html>
+<!-- 
+1:首先引入jquery
+2：然后引入base.js
+3：ligerResizable.js  引入这一个组件已经可以成功调整大小
+4：前面不成功是因为引入的顺序不对；
+5：plugns文件夹是可以不需要的
+6：core文件夹也是可以不要的
+
+1:悬浮窗口里面的内部不知道哪里来的，
+2：取消点击两次是可以关闭悬浮窗口的
+3：窗口缩小可以自由移动，全屏就不行
+ -->
