@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  #tt{width:300px;height: 300px;border: 1px solid red;}
+  </style>  
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!--   <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable({
+        addClasses: false,
+        //axis: "y",//约束在x，y轴上拖动
+        cancel: ".title",//防止点击内部某些元素时也能拖动，比如按钮，输入框
+        //containment: "parent",//限制在一个元素之类拖动；可以是id或者class，或者直接parent，还能是四个点的坐标数组；
+        cursor: "Auto",//设置拖动期间鼠标的样式，根本没用
+        //cursorAt: { left: 0,top:0 },//设置拖动时鼠标的相对位置；
+        //delay: 300,//延时启动，拖动开始之后延迟几毫秒
+        disabled: false,//当为true时就会无法拖动
+        //distance: 100,//鼠标拖走多远之后，动画才会启动，元素才会改变位置
+        //handle: "p",//在指定的子元素上面，才能够拖动整个框
+         opacity: 0.5 ,//拖动时真个框的透明度
+        // revert: true,//设置框被拖动后会回到原来的位置//可以用作补齐整块验证
+        //scroll: false,//设置为true也无法拖动，原本应该用来设置滚动；
+        //scrollSensitivity: 100,//没有任何区别
+        //snap: ".tt",//没有用，原本用来对齐到指定元素的
+        //snapMode: "inner",//没用
+        //stack: ".products" ,//控制层级，z-index  基本没用
+        zIndex: -1,//控制层级，z-index  这个是有用，拖动时有用
+        stop: function( event, ui ) {$("#tt").css("background","yellow");},//停止拖动触发
+    });
+    $( "#draggable" ).draggable( "enable" );//disable//设置启用或禁用，其他函数可以调用设置；
+    console.log($( "#draggable" ).draggable( "option", "appendTo" ));
+
+  });
+  </script>
+</head>
+<body><div class="products" style="background: red;">123456</div>
+<div id="tt"> 
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+  <button class="title">12</button>
+</div>
+</div> 
+
+ 
+</body>
+</html>
