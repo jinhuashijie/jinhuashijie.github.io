@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI 放置（Droppable） - 默认功能</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <!--  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"> -->
+  <style>
+  #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  .test{
+      background: blue;
+  }
+  </style>
+  <script>
+ /* $(function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  });*/
+  </script>
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content">
+  <p>请把我拖拽到目标处！</p>
+</div>
+ 
+<div id="droppable" class="ui-widget-header">
+  <p>请放置在这里！</p>
+</div>
+<div class="special">1</div>
+ 
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+    $( "#draggable" ).draggable({
+
+    });
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {//拖放块放下之后要执行的函数，跟draggable的是一样的
+        /*$( this ).addClass( "ui-state-highlight" ).find( "p" ).html( "Dropped!" );*/
+        $(".ui-widget-header").css("background","red");
+      },
+      accept: "#draggable",//这个选择哪个，drop下函数才会影响哪一个拖块；
+      activeClass: "ui-state-highlight",//拖块拖动时容器的样式
+      addClasses: false,//用来防止activeclass被添加；//事实上没反应
+      //disabled: true,//拖动拖块，容器将没有任何反应
+      //greedy: true,//没反应
+      hoverClass: "test",//当拖块绝大部分被拖到容器里的时候，会给容器添加这个class
+      activate: function( event, ui ) {$(".ui-widget-header").css("background","green");},
+      //一拖动就会执行这个函数
+    });
+    //$( "#droppable" ).droppable( "destroy" );//容器不再有任何反应，
+    //$( ".selector" ).droppable( "enable" );//启用容器；disabled
+    //var isDisabled = $( "#droppable" ).droppable( "option", "accept" );
+    //获取指定容器设置参数中，指定对象的值；
+    //console.log(isDisabled);
+    //$( "#draggable" ).droppable( "option", "disabled", true );//报错了，应该用来设置属性的值；
+    //$( "#droppable" ).droppable( "option", { disabled: true } );//用来设置属性的值；
+    //var widget = $( "#draggable" ).droppable( "widget" );//报错了，没用；
+    //console.log(widget);
+})  
+
+
+</script>
+<!-- 
+1：有没有demo里面的css文件都一样；
+2:droppable 与draggabel是相互依存的,draggable是拖放块，dropapble是容器；
+3：
+ -->
+</html>

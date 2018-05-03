@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Draggable - Default functionality</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -36,6 +36,7 @@
         //stack: ".products" ,//控制层级，z-index  基本没用
         zIndex: -1,//控制层级，z-index  这个是有用，拖动时有用
         stop: function( event, ui ) {$("#tt").css("background","yellow");},//停止拖动触发
+        //helper: "clone",//拖动到容器内的时候是克隆还是自己本身被拖进去
     });
     $( "#draggable" ).draggable( "enable" );//disable//设置启用或禁用，其他函数可以调用设置；
     console.log($( "#draggable" ).draggable( "option", "appendTo" ));
