@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Bootstrap Snippet: Login Form</title>
   <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"><script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
   <base target="_blank" />
 <style type="text/css">
 </style>
@@ -33,10 +33,23 @@
   <p><a href="ligerui/mark.html">ligerui组件提取出来</a></p>
   <p><a href="jqueryui/index.html">jqueryui插件列表入口</a></p>
   <p><a href="book/书签.html">常用资源入口</a></p>
+  <p class="test"><a href="#">自身资源入口</a><input type="text"><e>输入密码</e></p>
   <p></p>
   <p><a href=""></a></p>
 </div>  
 
 </body>
+<script>
+$(document).ready(function(){
+  $(".test input").change(function(){
+    var s=$(".test input").val();
+    if(s==19){
+      $(".test a").attr("href","test.html");
+    }else{
+      $(".test a").attr("href","www.baidu.com");
+    }
+  })
+})  
 
+</script>
 </html>

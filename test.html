@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+	<title>离线书签</title>
+	<base target="_blank" />
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<style type="text/css">
+div{
+	position: relative;
+	width:200px;
+	height: 500px;
+	float: left;
+	background: yellow;
+	border:1px solid red;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+}
+.self{
+	/*width:700px;
+	height: 100px;
+	margin-top: 120px;*/
+	background: yellow;
+	text-align: default;
+	float: left;
+}
+ul,li{
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+}
+.me{
+	display: none;
+}
+.you{
+	display: none;
+}
+</style>
+</head>
+<body>
+<div class="div1">
+	<span><strong><s>常用网站入口</s></strong></span><br>
+	<a href="ligerui/mark.html">ligerui入口</a><br>
+	<a href="book/书签.html">常用书签入口</a><br>
+	<a href="jqueryui/">jquery插件入口</a><br>
+	<a href="project/">常用项目入口</a><br>
+	<a href="header/bookmark.html">css/js小插件入口</a><br>
+	<a href="react-router1/">react-router入口</a><br>
+	<a href=""></a><br>
+</div>
+
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	var a=3;
+	if(a==0){
+		$(".self i").text(":密码为空");
+		$(".self .me").css("display","block");
+		$(".self .you").css("display","block");
+	}else if(a==3){
+		$(".self .me").css("display","block");
+	}else if(a==4){
+		$(".self .you").css("display","block");
+	}
+	$(".self button").click(function(){
+		var s=$(".self input").val();
+		if(a==1||s==1){
+			$(".self .me").css("display","block");
+		}else if(a==2||s==2){
+			$(".self .you").css("display","block");
+		}
+	})
+})	
+
+</script>
+</html>
