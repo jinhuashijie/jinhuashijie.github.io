@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<title>jQuery笔记</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+p{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 100px;
+    z-index: 99;
+}
+.box{
+    position: relative;
+    float: left;
+
+}
+.content{
+    padding: 10px;
+    border:1px solid white;
+    box-shadow: 0 0 5px red;
+    border-radius: 5px;
+}
+.content img{
+    width:190px;
+    height: auto;
+}
+.img0{
+    position: absolute;
+    z-index: 99;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+    <div class="box"><div class="content"><img src="image/bd1.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd2.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd3.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd4.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd5.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd6.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd7.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd8.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd9.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd10.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd11.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd12.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd13.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd14.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd15.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd16.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd17.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd18.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd19.jpg"></div></div>
+    <div class="box" ><div class="content"><img src="image/bd20.jpg"></div></div>
+    <div class="box"><div class="content"><img src="image/bd10.jpg"></div></div>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){//括1
+    var hi = $(window).width();//-100:初始排版
+    console.log(hi);
+    var num = parseInt(hi/212);
+    var arrInputValues = new Array();
+    //console.log(arrInputValues);
+  　$(".box").each(function(){ //括2
+        arrInputValues.push(parseInt($(this).css("height")));
+  　}); //括2
+　      var m = new Array();
+　  　  m[0]=parseInt($(".box").eq(0).css("height"));
+　  　  m[1]=parseInt($(".box").eq(1).css("height"));
+　  　  m[2]=parseInt($(".box").eq(2).css("height"));
+　  　  m[3]=parseInt($(".box").eq(3).css("height"));
+　  　  m[4]=parseInt($(".box").eq(4).css("height"));
+　  　  m[5]=parseInt($(".box").eq(5).css("height"));
+　  　  m.splice(num,m.length);
+        $(".box").eq(num-1).css("position","absolute");
+        $(".box").eq(num-1).css("float","left");
+        $(".box").eq(num-1).css("margin-left",(num-1)*212+"px");
+        $(".box").eq(num-1).css("margin-top","0px");
+    for (var i = 0; i < arrInputValues.length; i++) {//括3
+        var minheight=Math.min.apply(null, m);
+　      var newa  =   $(m).index($(Math.min.apply(null, m)));
+　      var lihei = parseInt($(".box").eq(i+num).css("height"));
+　  　  var newheight = minheight+lihei;
+　  　  var newleft = $(m).index($(Math.min.apply(null, m)))*212;
+        $(".box").eq(i+num).css("position","absolute");
+        $(".box").eq(i+num).css("z-index","9");
+        $(".box").eq(i+num).css("float","");
+        $(".box").eq(i+num).css("margin-left",newleft+"px");
+        $(".box").eq(i+num).css("margin-top",minheight+0+"px");
+        m[$(m).index($(Math.min.apply(null, m)))]+=lihei;
+　  }//
+    $(window).resize(function(){//括8--135：监听窗口宽度变化重新排版
+        var hi = $(window).width();
+        console.log(hi);
+        var num = parseInt(hi/212);
+        var arrInputValues = new Array();
+        console.log(arrInputValues);
+  　　  $(".box").each(function(){ //括2
+            arrInputValues.push(parseInt($(this).css("height")));
+  　　  }); //括2
+　      var m = new Array();
+　  　  m[0]=parseInt($(".box").eq(0).css("height"));
+　  　  m[1]=parseInt($(".box").eq(1).css("height"));
+　  　  m[2]=parseInt($(".box").eq(2).css("height"));
+　  　  m[3]=parseInt($(".box").eq(3).css("height"));
+　  　  m[4]=parseInt($(".box").eq(4).css("height"));
+　  　  m[5]=parseInt($(".box").eq(5).css("height"));
+　  　  m.splice(num,m.length);
+        $(".box").eq(num-1).css("position","absolute");
+        $(".box").eq(num-1).css("float","left");
+        $(".box").eq(num-1).css("margin-left",(num-1)*212+"px");
+        $(".box").eq(num-1).css("margin-top","0px");
+        for (var i = 0; i < arrInputValues.length; i++) {//括3
+            var minheight=Math.min.apply(null, m);
+　  　      var newa  =   $(m).index($(Math.min.apply(null, m)));
+　  　      var lihei = parseInt($(".box").eq(i+num).css("height"));
+　  　      var newheight = minheight+lihei;
+　  　      var newleft = $(m).index($(Math.min.apply(null, m)))*212;
+            $(".box").eq(i+num).css("position","absolute");
+            $(".box").eq(i+num).css("z-index","9");
+            $(".box").eq(i+num).css("float","");
+            $(".box").eq(i+num).css("margin-left",newleft+"px");
+            $(".box").eq(i+num).css("margin-top",minheight+0+"px");
+            m[$(m).index($(Math.min.apply(null, m)))]+=lihei;
+　      }//括3
+        $(window).scroll(function(event){//括4
+        var a1 = $(document).scrollTop();
+        var a2 = $(window).height();
+        var h = $(document).height();
+        var a = h-a1-a2;
+        if (a<2) {//括5
+            $(".box").last().after("<div class='box'><div class='content'><img src='image/bd1.jpg'></div></div><div class='box'><div class='content'><img src='image/bd2.jpg'></div></div><div class='box'><div class='content'><img src='image/bd3.jpg'></div></div><div class='box'><div class='content'><img src='image/bd4.jpg'></div></div><div class='box'><div class='content'><img src='image/bd5.jpg'></div></div>");
+            var h1 = $(window).width();
+　  　  　  var num = parseInt(h1/212);
+ 　  　  　 var arrInputValues = new Array();
+  　        $(".box").each(function(){ //括6
+                arrInputValues.push(parseInt($(this).css("height")));
+  　        }); //括6
+  　　      var m = new Array();
+  　　      m[0]=parseInt($(".box").eq(0).css("height"));
+  　　      m[1]=parseInt($(".box").eq(1).css("height"));
+  　　      m[2]=parseInt($(".box").eq(2).css("height"));
+  　　      m[3]=parseInt($(".box").eq(3).css("height"));
+  　　      m[4]=parseInt($(".box").eq(4).css("height"));
+  　　      m[5]=parseInt($(".box").eq(5).css("height"));
+  　　      m.splice(num,m.length);
+  　        for (var i = 0; i < arrInputValues.length; i++) {//括7
+     　         var minheight=Math.min.apply(null, m);
+  　  　        var newa  =   $(m).index($(Math.min.apply(null, m)));
+  　  　        var lihei = parseInt($(".box").eq(i+num).css("height"));
+  　  　        var newheight = minheight+lihei;
+  　  　        var newleft = $(m).index($(Math.min.apply(null, m)))*212;
+                 $(".box").eq(i+num).css("position","absolute");
+                 $(".box").eq(i+num).css("z-index","9");
+                 $(".box").eq(i+num).css("float","");
+                 $(".box").eq(i+num).css("margin-left",newleft+"px");
+                 $(".box").eq(i+num).css("margin-top",minheight+0+"px");
+                m[$(m).index($(Math.min.apply(null, m)))]+=lihei;
+  　        }//括7
+        }//括5
+    });//括4
+     });  
+    $(window).scroll(function(event){//括4
+        var a1 = $(document).scrollTop();
+        var a2 = $(window).height();
+        var h = $(document).height();
+        var a = h-a1-a2;
+        if (a<2) {//括5
+            $(".box").last().after("<div class='box'><div class='content'><img src='image/bd1.jpg'></div></div><div class='box'><div class='content'><img src='image/bd2.jpg'></div></div><div class='box'><div class='content'><img src='image/bd3.jpg'></div></div><div class='box'><div class='content'><img src='image/bd4.jpg'></div></div><div class='box'><div class='content'><img src='image/bd5.jpg'></div></div>");
+            var h1 = $(window).width();
+　  　  　  var num = parseInt(h1/212);
+ 　  　  　 var arrInputValues = new Array();
+  　        $(".box").each(function(){ //括6
+                arrInputValues.push(parseInt($(this).css("height")));
+  　        }); //括6
+  　　      var m = new Array();
+  　　      m[0]=parseInt($(".box").eq(0).css("height"));
+  　　      m[1]=parseInt($(".box").eq(1).css("height"));
+  　　      m[2]=parseInt($(".box").eq(2).css("height"));
+  　　      m[3]=parseInt($(".box").eq(3).css("height"));
+  　　      m[4]=parseInt($(".box").eq(4).css("height"));
+  　　      m[5]=parseInt($(".box").eq(5).css("height"));
+  　　      m.splice(num,m.length);
+  　        for (var i = 0; i < arrInputValues.length; i++) {//括7
+     　         var minheight=Math.min.apply(null, m);
+  　  　        var newa  =   $(m).index($(Math.min.apply(null, m)));
+  　  　        var lihei = parseInt($(".box").eq(i+num).css("height"));
+  　  　        var newheight = minheight+lihei;
+  　  　        var newleft = $(m).index($(Math.min.apply(null, m)))*212;
+                 $(".box").eq(i+num).css("position","absolute");
+                 $(".box").eq(i+num).css("z-index","9");
+                 $(".box").eq(i+num).css("float","");
+                 $(".box").eq(i+num).css("margin-left",newleft+"px");
+                 $(".box").eq(i+num).css("margin-top",minheight+0+"px");
+                m[$(m).index($(Math.min.apply(null, m)))]+=lihei;
+  　        }//括7
+        }//括5
+    });//括4
+});//括1
+</script>
+
+</html>
