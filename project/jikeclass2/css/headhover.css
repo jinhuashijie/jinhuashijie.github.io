@@ -1,0 +1,31 @@
+#jk-header a:hover,
+	#jk-header nav li:hover {
+	    color: #35b558;
+	}
+/*#jk-header nav li:hover .slide-submeu {
+	    display: block;
+	}*/
+#jk-header nav li:hover i.slide-icon {
+	    transform: rotate(180deg);
+	    -webkit-transform: rotate(180deg);
+	    -moz-transform: rotate(180deg);
+	    -o-transform: rotate(180deg);
+	    -ms-transform: rotate(180deg);
+	}
+#jk-header .centerbox:hover {
+	    background: #fafafa;
+	    border-radius: 5px;
+	}
+#jk-header .search .search-result a:hover {
+		color:#35b558;
+	    background-color: #fafafa;
+	}
+#jk-header .nav-other .userinfo-login:hover .slide-submeu {
+	    display: block;
+	    left: auto;
+	    right: 0;
+	    top: 69px;
+	}
+#jk-header .submenu a:hover {
+	    background: #fafafa;
+	}
