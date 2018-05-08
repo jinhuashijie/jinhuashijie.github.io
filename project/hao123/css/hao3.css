@@ -540,21 +540,25 @@ header{
     position: absolute;
     margin-top: 40px;
     margin-left: 750px;
+    cursor:pointer;
 }
 .change2{
     position: absolute;
     margin-top: 40px;
     margin-left:810px;
+    cursor:pointer;
 }
 .change3{
     position: absolute;
     margin-top: 40px;
     margin-left: 860px;
+    cursor:pointer;
 }
 .change4{
     position: absolute;
     margin-top: 40px;
     margin-left: 910px;
+    cursor:pointer;
 }
 .headnews{
     width: 600px;
