@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href=" https://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap-theme.min.css ">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+<pre>
+1:变量类型：值类型   引用类型
+1:前端js基础面试题，
+2：js基础；js-web-api  js开发环境
+3：dom查询，操作，ajax操作，事件绑定操作，什么是开发环境；
+4：知识点部分
+	基础知识部分：原型，原型链
+				  作用域   闭包
+				  异步，单线程
+	js-web-api  dom操作
+				ajax
+				  事件绑定
+	开发环境      版本管理
+				  模块化
+				打包工具
+	运行环境	页面渲染
+				性能优化
+5：最后，课程收获
+*如何应对面试题以及面试
+*学会前端js基础知识以及知识体系
+*帮助学员完成和通过面试
+6：基层工程师----基础知识    应聘的标准
+   高级工程师----项目经验
+   架构师--------解决方案
+7：工程师的自我修养--基础
+	扎实的基础会让你高效学习新技术---学习新技术的文档需要基础知识
+8：几个面试题
+	1：js中typeof能得到哪些类型
+	2：何时使用===  何时使用==
+	3：window.onload   和DOMContentLoaded 的区别
+	4：用js创建10个 &lt;a &gt;标签，点击的时候弹出来对应的序号
+	5：简述如何实现一个模块加载器，实现类似 requier.js的基本功能
+	6：实现数组的随机排序---这中问题非常多。
+	不仅要实现，而且要易读，精简，代码少。
+9：如何搞定所有面试题；
+	题海是万变不离器宗，变的是题目，不变的是知识
+	关键是要考虑考点---题目--什么考点--什么知识--再做这个题目
+
+10：js中 typeof有哪些数据类型？---考点：js变量类型，（还是数据类型）
+	何时用===  何时用==          考点：强制类型转换（if语句，运算中
+	window.onload DOMContentLoaded  考点：浏览器渲染过程
+	用js创建10个a标签，点击弹出对应序号   考点：作用域，而不是创建标签和绑定事件
+	简述如何实现一个模块加载器，   考点：js模块化
+	实现数组的随机排序                考点：js基础算法   （针对数组，对象）
+11：js中有哪些内置函数？
+	js变量按照存储方式区分为哪些？
+	如何理解json？	
+12：知识点有哪些？
+	变量类型，---值类型   ；  引用类型   一个是实际值（拷贝），一个仅仅是指针而已
+	 引用类型：数组，对象，函数，---无限制扩展属性；
+	变量计算；
+13：typeof undefined  ---undefined    
+	typeof "abc"       ---string
+	typeof 123         ---number
+	typeof true		   ---boolean    ---前面四个都是值类型，
+	typeof {}          ---object
+	typeof []          ---object
+	typeof null        ---object
+	typeof console.log ---function
+	一共是6种    8种数据六中类型，两个大类               {}
+	null是一个引用类型的对象，只一个空指针，没有指向任何对象
+	type只能区分值类型的详细类型
+	对引用类型就区分不出来，都是显示object，可是能区分出函数
+	函数是非常特殊的引用类型；
+14：变量计算---强制类型转换；
+	引用类型的计算变换是api的变换，值是数值的变换
+	1：字符串拼接  可能发生类型转换
+	2：==  运算符，可能发生类型转换
+	3：if语句      可能发生类型转换
+	4：逻辑运算符  可能发生类型转换
+    var a=100 +10   110
+    var b = 100+ "10"   10010  发生转换
+    100=="100 "   true
+    0==""         true    0和空字符都会转换成false
+    null==undefinded   true    null和undefinded 都可以转换成false
+
+    var a=true
+    if(a){
+    	//
+    }
+    var b=100
+    if(b){   b会被强制转成布尔类型，变成true
+    	//
+    }
+    var c=""
+    if(c){
+    	//   false   会被强制转成false
+    }
+    逻辑运算符
+    console.log(10&0)   0         10被转成true
+    console.log(''||"abc")  abc   空转换成false
+    console.log(!window.abc)  true  
+    var a=100         //判断一个变量会被强制转成哪种类型
+    console.log(!!a)  前面加两个非，强制转成true；  
+15:何时使用== 何时使用===
+	if(obj.a==null){
+		这里相当于 obj.a===null ||  obj.a===undefind  除此以外全部三等
+		这是jquery源码中的写法
+	}
+
+16:js中有哪些内置函数---数据封装类对象，
+	不考虑运行环境，单纯作为变成语音，的内置函数
+	object
+	array
+	boolean
+	number
+	string
+	function
+	data
+	regexp
+	error              {}
+    六种处理数据类型，number  string  boolean array object function 
+    一种日期，一种正则表达式    以及error  {}
+ 17：js按照存储方式区分为值类型和引用类型；
+ 	值是直接存储，引用是节省内存，共用--修改会相互影响  
+ 18：如何理解json 
+ 	json是一个js对象  同时也是一种数据格式
+ 	json.stringify({a:10,b:20})   对象转字符串，
+ 	json.parse('{"a":10,"b":20}')   有两个api  字符串转对象
+
+19：测试结果
+	1：数字变量赋值，赋值一次就固定了，后面就算修改引用，还是原值
+	2：引用类型，所有多会变换；
+	3：数字与字符串相加只会变成字符串；
+	4：但是数字减去字符串就会变成数字；字符串减字符串会报错；
+	5：在if里面会被当成false的情况
+	  0  空字符串  null  NaN （not a number）  false本身
+	6：内置函数  内置对象
+	7：双等和三等的情况；看一个对象的属性是否存在，用双等
+							以及函数的参数是否存在，用双等；
+
+	1：原型和原型链
+	2：如何准确判断一个变量是数组类型
+		typeof是有缺陷的
+	3：写一个原型链继承的例子
+	4：描述 new 一个对象的过程 
+	5：zepto或其他框架源码中如何使用原型链
+
+
+
+
+
+
+
+</pre>
+<div class="" id="test">123456</div>
+<div id="test2">321</div>
+</body>
+<script>
+	//隐式原型
+/*var obj={};obj.a=100;
+var arr=[];arr.a=100;
+function fn(){};
+fn.a=100;
+console.log(obj.__proto__);
+console.log(arr.__proto__);
+console.log(fn.__proto__);
+console.log(fn.prototype);
+console.log(obj.__proto__ === Object.prototype)
+console.log(fn.__proto__ === fn.prototype)*/
+//构造函数，，
+function Foo(name,age){
+	this.name=name;
+	this.alertName=function(){
+	alert(this.name);//这个找上来的时候是越级了的；
+}
+}//构造函数，就是一个函数，包含了参数，默认返回了this，
+Foo.alertName=function(){
+	alert(this.name);//这个找上来的时候是越级了的；
+}//设置了显式属性，显式属性里面还有属性，他的属性值是一个函数。
+//创建实例
+var f=new Foo("zhangsan");//实例化一个构造函数，
+f.printName=function(){
+	console.log(this.name)//这个this指向了哪里？自己没有，就找向了他的构造函数本身的显式原型；
+}
+//f.printName();//f本身也没有alertName  也是找向了上一级；
+//f.alertName();//f代表构造函数的本身；后面的函数代表一个属性，这个属性本身是一个函数，进行了自执行
+//alertName本身是一个函数名字，后面带上小括号，进行了自执行
+//这个应该就是继承；所谓的隐式原型就是他本身没有属性，而这个属性被放在构造函数的显式原型里面；
+//this里面有这个属性的时候，构造出来的函数才有显式属性，this没有的话，就只能找上一级显式原型，显式没有，就报错
+//this不管几级永远都指向对象或者函数本身；
+//f.toString();//要去f.__proto__.__proto__中去查找；
+//
+function Yes(name,age){//这个时候函数本身就是一个对象
+	this.name=10;      //利用this给定属性和属性值；
+	this.age=20;       //不仅仅会向上找属性和值，
+}
+var y=new Yes();
+y.name=100;
+//console.log(y.name)
+//console.log(y.age)//这个完全继承下来；
+function Elem(id){                            //首先定义了一个母函数，而非对象函数
+	this.elem=document.getElementById(id)     //然后定义了一个属性
+}
+Elem.prototype.html=function(val){         //然后定义显式原型
+	var elem =this.elem;      //然后显式原型里面还有对象，这个对象又继承了母函数的属性
+	if(val){
+		elem.innerHTML=val;
+		return val;
+	}else{
+		return elem.innerHTML;
+	}
+}
+Elem.prototype.on=function(type,fn){
+	var elem =this.elem;
+	elem.addEventListener(type,fn);
+	return this;
+}
+//var div1=new Elem("test");//这里构造了一个实例，并传递了一个参数；
+//这个实例等于母函数本身，继承了母函数的属性，
+//console.log(div1.html("987654"));
+
+var arr=[1,2,3];
+var object={
+	a:1,
+	b:2
+}
+if(true){
+	var name ="zhangsan";
+}
+console.log(name);
+var test1=function(){
+	var abc=100;
+	console.log(name);
+}
+//console.log(abc);
+//test1();
+function F1(){
+	var a =100;
+	return function(){ 
+		console.log(a)
+	}
+}
+var f1=F1();
+console.log(f1);//这个是得到的是返回的函数的本身
+var a=200;
+//console.log(f1())//后面再加小括号才能执行；但是a为什么找不到了？
+//f1()//不是a找不到了，而是这个函数执行完就被释放了，没有了；
+var f2=F1()();
+//console.log(f2);
+
+//var i //难道他创建了10个函数？
+//debugger;
+/*for(i=0;i<10;i++){
+	(function(i){//这个函数本身在自执行；自执行的时候带了一个参数
+		var a=document.createElement("a");//创建标签可以理解
+		a.innerHTML=i+"1223456<br>";      //向标签内插入数据可以理解
+		a.addEventListener("click",function(e){  //添加监听函数可以理解
+			e.preventDefault();   //阻止默认事件也可以理解；
+			alert(i);                //这里就有问题了；
+		})
+		document.body.appendChild(a) //把内容插入到页面中可以理解
+	})(i);//这个i没有了，就会变成找不到，为什么？
+}*/
+for(i=0;i<9;i++){
+	var h=function(i){
+		var a=document.createElement("a");//创建标签可以理解
+		a.innerHTML=i+"1223456<br>";      //向标签内插入数据可以理解
+		a.addEventListener("click",function(e){  //添加监听函数可以理解
+			e.preventDefault();   //阻止默认事件也可以理解；
+			alert(i);                //这里就有问题了；
+		})
+		document.body.appendChild(a) 
+	}
+	h(i);//作为参数传进去是可以的；
+	//他的意思，里面参数变了之后，整个函数就是一个新函数了；
+}
+/*for(i=0;i<9;i++){
+	var a=document.createElement("a");
+	a.innerHTML=i+"1223456<br>";
+	document.body.appendChild(a)
+		var h=0;
+		h++;
+	a.addEventListener("click",function(e){ 
+		e.preventDefault();
+		console.log(h);//只能得到1；在他的父级作用域只运行了一次；
+	})
+}*/
+/*a.addEventListener("click",function(e){ //动态的元素根本绑定不上；
+	console.log(654);
+	e.preventDefault();
+	console.log(321);
+	console.log(this.innerHTML);
+})*/
+/*var  x=document.getElementsByTagName("a");//第一是一个复数，第二必须全部驼峰；
+var x2=document.getElementsByTagName("div");
+console.log(x);
+console.log(x[1]);//确实是一个数组，但是却把br标签也添加去了，需要手动去除；*/
+/*setTimeout(function(){console.log(5)},5000);
+setTimeout(function(){console.log(10)},10000);*/
+function formatDate(dt){
+	if(!dt){
+		dt=new Date()
+	}
+	var year=dt.getFullYear();
+	var month=dt.getMonth()+1;
+	var day=dt.getDate();
+	if(month<10){//当月数小于10 的时候前面加上0，变成字符串
+		month="0"+month
+	}
+	if(day<10){
+		day="0"+day
+	}
+	return year+"-"+month+"-"+day
+}
+//console.log(formatDate())//这样是可以直接产出的
+
+function bindEvent(elem,type,fn){
+	elem.addEventListener(type,fn)
+}
+var a=document.getElementById("test");
+bindEvent(a,"click",function(e){
+	e.preventDefault();
+	console.log("test");
+})
+/*var a2=document.getElementById("test2");
+bindEvent(a2,"mouseover",function(e){
+	e.preventDefault();
+	console.log("test2");
+})*/
+var a2=document.getElementById("test2");
+// var body=document.body;
+// bindEvent(a2,"click",function(e){
+// 	//e.stopPropatation()//报错了，不是函数
+// 	e.stopPropagation()//确实是写错了，可以组织；
+// 	console.log("测试冒泡")
+// 	var target=e.target
+// 	console.log(target)//打印的是整个标签和内容
+// })
+// bindEvent(body,"click",function(){
+// 	console.log("测试冒泡body")
+// })
+
+window.callback=function(data){
+	console.log(data)
+}
+
+
+
+
+</script>
+<script src='http://likun2008.top/js/a.js'></script>
+</html>
+<!-- 
+所有的问题：
+
+4-2-9 原型和原型链
+1：如何准确判断一个变量是数组类型
+2：写一个原型链继承的例子
+3：描述new一个对象的过程
+4：zepto或其他框架源码中如何使用原型链；
+
+yu
+ -->
