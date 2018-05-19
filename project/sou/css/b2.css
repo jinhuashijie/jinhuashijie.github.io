@@ -1,0 +1,133 @@
+.main-contain{
+	width:970px;
+	margin:auto;
+}
+.head-home{
+	background: #333;
+	color:#fff!important;
+	height: 30px;
+	min-height: 30px;
+}
+.head-homepage{
+	color:white!important;
+	margin-left: 0px;
+	padding:0 0 0 0;
+	line-height: 30px;
+	font-size: 14px;
+}
+.head-homedesk{
+	color:white!important;
+	padding:0 0 0 0!important;
+	line-height: 30px!important;
+	font-size: 14px!important;
+}
+.head-logo{
+	position: relative;
+	left: -150px;
+	margin-left: 50%;
+}
+.head-search{
+	padding:;
+	margin-top: ;
+	width:960px;
+	margin-left: 50%;
+	left: -480px;
+	position: relative;
+	height: 43px;
+}
+.search-result{
+	height: 35px;
+	line-height: 35px;
+	padding-left: 20px;
+}
+.search-notice{
+	text-align:center;
+	background: white;
+	color:red;
+}
+.search-kind{
+	height: 40px;
+	line-height: 40px;
+}
+.search-contain{
+	padding:0 0 0 0 ;
+	line-height: 35px;
+}
+.search-list{
+	border-radius: 15px;
+	border-radius: 15px;
+	border-radius: 15px;
+}
+.search-file{
+	height: 40px;
+	line-height: 40px;
+	margin-top: -13px;
+}
+.search-file1{
+	padding:0 0 0 0 ;
+	line-height: 35px;
+}
+.result-kind{
+	height: 40px;
+	line-height: 40px;
+	margin-top: -13px;
+}
+.result-kind1{
+	padding:0 0 0 0 ;
+	line-height: 35px;
+}
+.result-listimg1{
+	width:14px;
+	height: 14px;
+	margin-top: -3px;
+}
+.result-listimg2{
+	width:16px;
+	height: 16px;
+}
+.result-listimg3{
+	border:0;
+	border-radius: 10px;
+	cursor: text;
+	background: #f0f0f0;
+}
+.result-listimg9{
+	border:0;
+	border-radius: 10px;
+	cursor: text;
+	background: #bbb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
