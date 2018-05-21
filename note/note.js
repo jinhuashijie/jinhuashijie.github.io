@@ -7,6 +7,7 @@
 3：移动端适配
 	media="screen and (min-width: 767px) and (max-width: 1129px)"
 	css里面可以不写尺寸，html里面必须写
+	html里面也可以不写，css里面可以每个尺寸一个大括号就行；
 	常用尺寸：大屏幕：大于1200px；   (min-width: 1130px) 
 			  默认：980px；
 			  平板：大于768px；  (min-width: 767px) and (max-width: 1129px)
