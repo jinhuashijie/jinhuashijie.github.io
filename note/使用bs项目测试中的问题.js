@@ -7,7 +7,7 @@
 7：<meta name="viewport" content="width=device-width, initial-scale=1.0"> 就算是百分比布局，也得有这一句
 	不然手机适配会出问题
 8：分栏要么用面板一直分，要么用表格也行；
-
+9：响应式采用把媒体查询放在css里面，整体页面全部用百分比，大部分都是公共样式，少量的分开写
 
 
 
