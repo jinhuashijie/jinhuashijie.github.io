@@ -593,6 +593,9 @@ p.getAttribute("data-name")
 p.setAttribute("data-name","imooc")
 p.getAttribute("style")
 p.setAttribute("style","font-size:30px;")
+设置style，只能这样，
+s.setAttribute("style","height:30px;width:30px;background:url(image/s1.png) no-repeat;");
+for(i=0;i<96;i++;){++的后面有分号，也会报错的；
 
 dom结构操作
 新增节点，获取父元素，获取子元素，删除节点；
