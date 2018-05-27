@@ -1,0 +1,124 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>马赛克遮罩切换效果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="脚儿网" />
+<meta name="keywords" content="javascript图片切换，焦点图效果，滚动，幻灯片，马赛克，遮罩，仿flash" />
+<meta name="description" content="XMosaic.js是脚儿网写的一个图片切换类，效果为各种马赛克遮罩" />
+<style type="text/css">
+#jsf {
+	width:480px;
+	height: 320px;
+}
+#jsf img,div{
+	position: absolute;
+	margin:0;
+	padding: 0;
+}
+/*#jsf div{
+	position: relative;
+	margin:0;
+	padding: 0;
+	float: left;
+}*/
+</style>
+<script type="text/javascript" src="b.js"></script>
+</head>
+<body>
+
+<div id="jsf">
+	<div id="jimg1"></div>
+	<div id="jimg2"></div>
+	<div id="jimg3"></div>
+	<div id="jimg4"></div>
+</div>
+<ul id="pager">
+	<li class="on">1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+</body>
+<script>
+var r =function(id,url,timer,later){
+	function b(a,top1,top2,left1,left2,timer){
+		var id0=document.getElementById(a);
+		var y=top2/5;
+		var top=0;
+		var to=1;
+		function m(){
+			if(to>=5){
+				clearInterval(timer0);
+			}
+			top=top+y;
+			to++;
+			id0.style.marginTop=top+"px";
+		}
+		var timer0=setInterval(m,timer)
+
+	}
+	var ra=function(id,url,timer9){
+		var con=document.getElementById(id);
+		var s=document.createElement("div");
+		var style1="height:40px;width:40px;";
+		var style12="background:url(image/s";
+		var style13=".png) no-repeat ";
+		var style31="margin-left:";
+		var style32="px;";
+		var style41="margin-top:";
+		var style42="px ";
+		var style5="-";
+		var d=480/40;
+		var h=320/40;
+		var m=12*8;
+		var j=0;//横着
+		var k=0;//竖着
+		for(i=1;i<=96;i++){
+			var t=(i-1)/12;
+			if(i!=1&&t%1===0){
+				k++;
+				j=0;
+				var a=document.createElement("div");
+				a.setAttribute("id","div"+i);
+				a.setAttribute("style",style1+style31+(j)*40+style32+style41+0+style32+style12+url+style13+style5+j*40+style42+style5+k*40+style32);
+				con.appendChild(a);
+				var tt=parseInt(Math.random()*100)
+				b("div"+i,0,k*40,j*40,k*40,timer+tt);
+				j++
+				
+			}else{
+				var a=document.createElement("div");
+				a.setAttribute("id","div"+i);
+				a.setAttribute("style",style1+style31+(j)*40+style32+style41+0+style32+style12+url+style13+style5+j*40+style42+style5+k*40+style32);
+				con.appendChild(a);
+				var tt=parseInt(Math.random()*100)
+				b("div"+i,0,k*40,j*40,k*40,timer+tt);
+				j++;
+			}
+		}
+	}
+	ra("jimg1","1","timer");
+	var m=3;
+	var rb=function(id,url,timer){
+		var elem = document.getElementById("jimg1");  
+		elem.innerHTML = "";
+		var s="image/s";
+		var t=".png";	
+		if(m<4){
+			m++
+		}else if(m=4){
+			m=1;
+		}
+		ra("jimg1",m,timer);
+	}
+	var j0= setInterval(rb,later);
+}
+// 图片的容器，图片的名字(地址必须是image/ 后缀名必须是png)，动画完成所需时间，图片停留不动的时间
+//暂时只能放四张图片，放多或放少需要修改函数rb内m的值
+r('jimg1',2,100,4500);
+
+</script>
+</html>

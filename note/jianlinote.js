@@ -517,7 +517,7 @@ var arr=[1,2,3];
 forEach(arr,function(item,index){//为什么会报错呢》？
 	console.log(index,item)
 })
-var arr=[1,2,3];    //下面就能行，上面就不悉尼港；
+var arr=[1,2,3];    //下面就能行，上面就不行；
 arr.forEach(function(item,index){ //先元素，后下标
 	console.log(index ,item)
 })
