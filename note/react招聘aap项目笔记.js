@@ -161,9 +161,17 @@ app.get后面的参数中斜杠掐面是不能加点的路径格式，端口可�
 没修改一次，服务就得在cmd里面重启一次；而且路径也是需要设置的，有点跟react-router相似
 cnpm install -g nodemon  这个插件来进行自动重启服务，大概四十秒钟
 命令也变了，nodemon server.js  不用手动中断，但是还是得手动刷新
+重装：安装  cnpm install express --save 
+cnpm install -g nodemon  这个插件来进行自动重启服务，
+app.use如何使用模块？？
+res.send  res.json  res.sendfile,返回的是不同的内容
+返回文本  返回json  返回文件
 ===============第二章：第四课：express与mongodb结合==================================
 第四部分：express + mongodb基础
-1：下载安装mongodb，跟安装nodejs差不多；安装完输入mogo在cmd里面，
+1：下载安装mongodb，跟安装nodejs差不多；安装完输入mogo在cmd里面，--直接输入命令是找不到命令的。打开 mogo.exe也是行的
+必须在mongodb里的bin目录里面启动mongo才行，但是端口打不开
+在bin里面启动 mongod.exe是能够打开端口的，问题是怎么调用？
+在bin里面brew install mongodb 不是命令
 2：npm安装中间库mongoose，安装完可以直接使用；怎么用？
 3： 在 server.js 里面直接require；
 4：也是mongoose.connect(db_url);
@@ -180,8 +188,8 @@ mongo.exe --config C:\Program Files\MongoDB\mongo.config    也不行
 mongod  可以跑出一堆东西；还是链接不上；
 运行mongod可以看出错在哪里，原因是c目录下没有data，db文件夹，新建两级目录之后就可以了
 接下来让mongodb与express配合
-cnpm install mongoose --save
-需呀同时启动mogod 和mongoose才行；
+cnpm install mongoose --save  在项目目录里安装
+需要同时启动mogod 和mongoose才行；
 **********************************第三章：react基础知识*************************章星课等部分减备注井
 1：react入门实例---关键的一切皆组件--专注view层，mvc
 cnpm install --save react@next react-dom@next  更新react
@@ -372,14 +380,139 @@ action可以返回函数，使用dispatch提交action
 react-rudux 提供provide 和connect两个接口来连接
 2：provider组件在应用最外层，传入store即可，只用一次
 cnpm install react-redux --save   安装了之后为什么还是一直转圈加载不出来呢？也不报错
+----------------第四章：第七课：装饰器-没搞懂-------------
+json文件里为啥老师没有babel-plugin
+npm run eject   按确定
+cnpm install --save-dev babel-plugin-transform-decorators-legacy
+确实是前面搞错了，在npm run eject的时候，不能直接确定而是要输入y之后再确定，babel出现了
+,
+    "plugins": [
+        "transform-decorators-legacy"     
+    ]
+即便加入了这个还是不行；----这个问题还需要测试；
+-----------------第四章：第八课：react-router4---------
+1：react官方推荐的路由库，4是最新版本
+	4是全新版本，和之前版本不兼容，浏览器和react-native兼容
+	react开发单页应用必备，践行路由即组件的概念
+	核心概念：动态路由，route，link Switch
+**安装： cnpm install react-router-dom --save
+2：入门组件；
+	browserrouter  包裹整个应用   下面只能有一个最外层的标签
+	router路由对应渲染的组件，可嵌套；里面加exact 才能不显示别的；
+	link  跳转专用 
+3：应用虽然放在BrowserRouter里面，但是数据还是由redux来管理的
+----------------第四章：第九课：其他组件-----------------
+1：url参数，route组件参数可用冒号标识参数
+    this.props.match.params.location   可以获取url后面的参数--必须在route标签里配合location
+2：redirect组件跳转<Redirect to='/qibinglian'></Redirect> 
+	点击还是正常反应，一刷新就跳转的到指定页面了
+3：switch只渲染一个子组件；--多页面如404--还是没搞懂有啥用处：
+这个是一个额外的，在地址都没有匹配的情况下，跳转到预设的页面
+----------------第四章：第十课：redux 配合react复杂应用
+1:route里面的路径是不带点
+----------------第四章：第十一课：redux 配合react复杂应用（2）
+复杂redux应用 多个reducer 用combineReducers合并
+redirect组件跳转
+switch只渲染一个子route ；
+
+到引入counter删除之前还是对的，后面为什么又报错了呢？
+原因找到了：reducer本身是个固定名字，没问题，一旦合并reducers之后，this.props就不能用了
+
+----------------第十一课：第十二课
+(){}/</>
+******************第五章第一课：需求分析++++++++++++++
+1：需求分析---项目骨架--页面架构与用户交互流程
+       页面
+
+用户中心-进来之后分化-（我是）牛人    （我是）boss
+
+登陆                     求职信息        管理职位
 
 
+注册                      职位列表       查看牛人
 
+信息完善               -------------聊天------------
 
+文件架构和规范---
+	src前端源码目录
+	server后端express目录
+	和根据功能文件夹：component，container，reducers
 
+router 怎么划分页面
+	进入应用时获取用户信息，用户未登陆跳转login页面
+	login和reigster页面不需要权限认证
+	用户信息，聊天列表，职位列表页面共享底部tabbar
+其他注意事项
+mongodb字段设计，axios发送异步请求，
+redux管理所有数据，组件尽量用在ante-mobile，弱化css
+=====================第五章第二课：前后端联调===============
+1：需要用asios发送异步请求，如何发送，端口不一致，使用proxy配置转发；
+	axios拦截器，统一loading处理--跨域的问题；
+	redux 里使用异步数据，渲染页面
+2：axios，简洁好用的发送请求库；
+	cnpm install axios --save     react 在3000端口，server在9093端口，怎么统一
+	需要修改json文件
 
+==================前后端联调：拦截器=================《/》<>
+cnpm install antd-mobile --save
+
+*****************第六章第一课：登陆注册：内容介绍
+1：登陆和注册功能实现
+	页面文件结构  文件夹，组件，业务组件，通用组件
+	web开发模式   认证机制
+	前后端实现 前端react全家桶  后端express+mongodb
+
+2：页面文件结构--骨架结构实现
+	组件放在component文件夹下面--公用组件
+	页面放在container文件夹下面--业务组件，其他的redux，reducer对外暴露的
+	页面入口处获取用户信息，决定跳转到哪个页面--
+3：开发模式--前后端交互使用json，验证使用cookie
+	express依赖cookie-parser  cnpm install cookie-parser --save
+	cookei类似一张身份卡，登陆后服务端返回，你带着cookie就可以访问受限资源
+	页面cookie的管理浏览器会自动处理，直接使用模块函数
+4：开发流程：
+	用户加载页面------带cookie向后端获取用户信息--用户加载页面
+
+							已登录					未登录
+
+	app内部页面-------登陆成功，前端存储cookie-----登陆页面
+
+修改json引入import还是出问题了的
+cnpm install babel-plugin-import  --save  之后是不报这个错误了
+-------------------------第六章第二课：登陆与注册
+
+--------------------------第六章第三课：判断路由-------------
+<AuthRoute></AuthRoute>   这个组件专门用来检测路由
+
+---------------------------第六章第四课：用户信息校验---------------
+import {withRouter} from 'react-router-dom'@withRouter
+在组件不是路由组件的时候，用这个包裹一下，就有history属性了
+
+---------------------------第六章第五课：注册交互实现------------可以正常实现
+
+--------------------------第六章第六课：注册请求发送------------要是用redux，提交给后端
+
+--------------------------第六章第七课：数据库模型建立------------
+要非常小心路径的问题，有没有点非常重要，一旦找不到文件首先查路径的问题
+cnpm install body-parser --save   到底该安装到哪一个文件夹里面？
+
+--------------------------第六章第九课：注册前后端连调-----------------
+------------------------------这个后面不能带括号，有的地方要带，有的地方不能带，要小心一点
+<Button type="primary" onClick={this.handleRegister（）}>注册</Button>
+点击注册的时候为什么报错？数据也没有写进去？
 
 **********************************************
+
+
+
+
+
+
+
+
+
+
+
 
 
 ++++++++++++++++++++++++++++自己的总结判断++++++++++++
@@ -442,118 +575,12 @@ store.dispatch 通过仓库的联络员来修改状态
 2：然后创建一个带判断选项的函数，里面传两个参数
 3：然后在createStore下实例化这个函数，这个函数变成了一个参数
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+4:：redux默认只处理同步，如果是像setTimeout之类的异步，就必须使用中间件
+而且在异步中必须使用dispatch作为参数穿进去
+5：进一步的优化：使用react-redux 提供：provider，connect 
+开了redux和react-redux不是同一个东西
+装饰器？是什么玩意儿？
+npm run eject 弹出配置文件 
 
 
 
