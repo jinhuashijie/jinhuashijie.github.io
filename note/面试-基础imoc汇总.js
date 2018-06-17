@@ -389,6 +389,9 @@ var img =document.createElement("img")
 img.onload=function(){
 	console.log("图片加载完成后才会执行")
 }
+window.onload=function(){   //里面的函数是直接执行的
+		console.log("test")
+}
 img.src="url";那么是不是这幅图片加载完成后才会加载接下来的图片
 也不是，至少html 和css 是允许错误的；
 绑定事件的情况--几乎所有的事件本身就是异步的，并没有特别的

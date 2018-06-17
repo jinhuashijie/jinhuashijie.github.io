@@ -28,3 +28,16 @@
 3： 自动完成前面两个还好用，最后一个可以借鉴，第三个仅仅是输入change事件；
 4：自动完成出问题了；
 5:表单的多选也出问题了
+
+
+
+1:view file contents                 ---会显示控制台--命令行记录
+//跟工作区文件相比较
+2:compare against workspace file     ---会显示两个更改前后的对比；有绿有红，有加有减
+
+3:compare against previous version   ---也是一样的显示对比的差异--更改
+//与以前版本相比较
+4:view  file history                 ---还是所有的历史记录，
+
+
+$(document).ready()是在DOM结构绘制完毕之后就执行内部的语句了，不用像 window.onload一样，需要等到全部元素都加载完毕才执行。

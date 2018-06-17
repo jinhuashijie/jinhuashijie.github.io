@@ -13,6 +13,8 @@
    e:test2  第二轮测试 也跑通了
    e：test4  第三轮：自己分开测试
    e:test3  webpack本地服务器的测试，
+5：github/abc里存储的git协作，使用vscode怎么弄的。
+6：template.js放在本note文件夹里面，可是测试的项目放哪里去了呢？
 
 
 
