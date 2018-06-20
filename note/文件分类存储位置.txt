@@ -16,7 +16,9 @@
 5：github/abc里存储的git协作，使用vscode怎么弄的。
 6：template.js放在本note文件夹里面，可是测试的项目放哪里去了呢？
 7：乡项目也存放在笔记文件夹里面；
-
+8：E:\mongodbhub\adminMongo   网页端管理mongodb
+9：乡战略规划：f:xiangself-xiangselfjs  ，页面布局：xiangpage笔记js
+ 
 
 
 
