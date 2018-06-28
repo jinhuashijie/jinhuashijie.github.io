@@ -18,6 +18,9 @@
 7：乡项目也存放在笔记文件夹里面；
 8：E:\mongodbhub\adminMongo   网页端管理mongodb
 9：乡战略规划：f:xiangself-xiangselfjs  ，页面布局：xiangpage笔记js
+9：webpack打包的详细记录在github--webpacktest文件夹里面
+10：aixos和socketio测试记录在E:socketiotest里面
+11：webpack完全成功的测试--在io中webpackstep，加上axios，加上soketio完全成功的，在io中socket，其他的都有问题
  
 
 
