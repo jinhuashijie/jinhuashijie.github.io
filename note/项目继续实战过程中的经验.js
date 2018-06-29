@@ -30,8 +30,116 @@ webapp
 解决前面遇到的问题；
 ---整个系统是跑通的---然后各个知识点是可以跑通的---各种问题是可以得到解决的
 各种设想是可以得到验证的。
-笔记做完了要方便以后随时看。
+笔记做完了要方便以后随时看。--分两部分--第一为顺序部分，第二：为专门记知识点的部分；
 
+1-6：安装环境：webapck+react 
+	1:save-dev dev代表开发环境；在json文件里面放的地方是不一样的；
+1-7：在json中，dependencies，devdependencies  
+	webpack.config.js
+	path nodejs自带的库，可以直接引用
+	webpack  引入之后可以使用插件
+1-8：index.jsx是所有文件的入口；
+	resolve，里面在引用的时候可以不写后缀名，
+	loader： 各种loader
+	autoprefixer：加前缀，适配各种内核浏览器；
+	plugins：插件：
+		htmlwebpack:引用模板文件；
+		webpackhotmodulereact 热刷新
+		openbrowserplugin：打开指定端口
+		webpack.defineplugin：决定环境是否报错；
+1-9：webpack.production.config.js
+	entry:可以有多个入口，vendor就是第三方依赖库；
+	output:放build；
+	loader：css分离；
+	webpack.BannerPlugin("这里是打包压缩后文件顶底部的备注信息")
+	去掉waring
+2-1：react基础：jsx--智能组件--木偶组件；-生命周期；
+	代码分离：
+2-2：jsx语法的注意事项
+	只有一个父节点包裹，标签必须正确闭合
+	大括号节点里面返回节点，也需要一个父节点；
+	大括号里可以写js语法，可以对数组进行map
+2-3：事件：循环和判断
+	.bind(this) 这个可以直接写在花括号里面
+	Date.now()  长串毫秒
+	event.prevertDefault
+	{arr.map(fucntion(item,index){
+		return <li key={index}>{item}</li>   必须有key 
+	})}
+2-4：代码分离-就是es6下的import
+	代码分离的层级：每个文件夹就是一个页面；每个页面的子页放在subpage
+	conponent:里面放通用的组件；
+	入口：index.jsx=》页面：container=》共用组件：components
+	-------这样分离之后，我们在其他项目中也可以引用这些插件；
+2-5：数据传递：数据变化
+	this.props上一级标签里面不仅仅可以传字符串，还能传变量，传对象，传函数
+
+2-6：智能组件--木偶组件=》containers里 就是智能组件 components就是木偶组件
+	智能组件定义数据，木偶组件接收数据；
+2-7：生命周期：-就是钩子--执行顺序
+	componentDidMount    -可以使用三元来进行首次数据渲染
+	shouldComponentDidUpdate
+	componentDidUpdate 触发更新完成--结合router
+	componentWillUnmount 清空定时函数--组件被销毁之前
+3-1：性能优化；
+	官方：cnpm i react-addons-perf --save 性能检测工具，引入到入口文件中；赋值到window下；
+	Perf.start()  开始检测  直接在控制台写入--然后进行操作
+	Perf.stop()  停止检测   操作完成后在控制台说
+	Perf.printWasted() 打印出浪费性能的组件；
+		import Perf from 'react-addons-perf' 
+		if(__DEV__){ 应该是从config里面定义的
+			window.Perf=Perf  这个可以单独写；
+		}
+	十几毫秒之内可以无所谓；
+	PureRenderMixin  优化
+	官方最基本的优化组件：cnpm i react-addons-pure-render-mixin --save
+	直接import    from 
+	在构造函数中绑定this，--就是合并了原来的几个mount--每个组件都加
+	this.shouldComponentUpdate=PureRenderMixin.shouldComponentUpdate.bind(this)  
+	componentDidUpdate(prevProps,prevState){
+
+	}
+	shouldComponentUpdate(nextProps,nextState){
+		return true  默认返回true
+ 	}
+ 	Immutable.js  层次结构比较深的数据结构，就是对象里面有对象，里面还有对象，还有对象，很多层
+4-1：路由：-跳转和参数
+4-2：router-map的配置
+5-1：简单demo；redux
+6-1：get请求；数据mock(假数据)--要用到fetch；
+6-3：mock：在开发时无法获取后台数据，所以要用模拟数据；
+	1：静态模拟数据：json文件--只支持get
+	2：模拟动态接口：
+	3：转发线上接口
+	
+7-1:开发步骤
+7-2:路由介绍
+
+https://pan.baidu.com/s/1uaMYKifsHXQA8bJCxDmL7w
 备忘的知识点：
 xshell 模拟linx命令
+手写代码与模块代码分开打包；缓存模块代码，更改手写代码的hash名字；
+
+
+
+所用到的知识点-------------
+1：主要的mock，以及fetch，以及css3字体图标
+2：分组件的概念，一个文件夹一个组件，这样可以实现完全的复用，只需在组件内部修改样式即可
+3：subpage的概念；
+4：步骤架构上面
+	头部：--加载城市，
+	中部：--轮播图
+	底部广告：
+	最底部加载更多
+5：loading的加载
+
+
+
+
+
+
+
+
+
+
 
