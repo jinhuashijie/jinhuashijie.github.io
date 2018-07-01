@@ -114,6 +114,18 @@ webapp
 	
 7-1:开发步骤
 7-2:路由介绍
+7-12：安装mock : cnpm install mock whatwg-fetch fetch koa --save-dev
+	npm run mock  localhost:3000/api/homehead  在start运行前台之前要先运行后台
+	在json中加入命令： node --harmony ./mock/server.js   后端代码在 ./mock 目录下
+	fetch 
+	后端接口是用koa做的，用来返回json数据；
+	在json中加入命令：start后面："mock":"node --harmony ./mock/server.js",
+	使用koa框架实现web服务；
+		前台是react，但是用什么在来回传送数据？以前是用axios
+		后台应该是在用mock搭建的服务
+		而json文件就是数据源，替代了mongodb。
+			那么，他们是如何创建接口，又是如何传送数据，如何操作数据库的？
+
 
 https://pan.baidu.com/s/1uaMYKifsHXQA8bJCxDmL7w
 备忘的知识点：
