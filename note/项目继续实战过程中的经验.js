@@ -125,13 +125,42 @@ webapp
 		后台应该是在用mock搭建的服务
 		而json文件就是数据源，替代了mongodb。
 			那么，他们是如何创建接口，又是如何传送数据，如何操作数据库的？
+*6-1.2.3:koa 的使用，在设置config里proxy之后，后台的get方法确实是成功传到前台了的
+	*******************到底是怎么传的***************
+	首先后台页面已经搭建好，前台转发设置好，前台引入执行函数，中间的部分怎么弄 的？
+	引入两个模块
+import 'whatwg-fetch'
+import 'es6-promise'
+export function postData(){//这个定义的执行函数
+	var result =fetch('/api/post',{  //这个是定义的前后台连接的接口
+		method:"POST",
+		credentials:'include',
+		headers:{                   //这是固定的写法
+			'Accept':'application/json,text/plain,*/*',
+			'Content-Type':'application/x-www-form-urlencoded'  //这个在转换body的格式
+		},
+		body:"a=100&b=200"         //这个是传输的内容，却没有显示在页面上--请求已经发往后台
+	});
+	result.then(res=>{
+		console.log(144)
+		console.log(res.text())
+		return res.text()
+	}).then(json=>{
+		console.log(json,147)  //这两个都执行了的--json代表后台页面的数据-这个接口
+	})
+}
+	**********能够从后台获取数据，如何向后台传递数据呢？
+	fetch应该是个中间件，从前台拿到数据，再传递给后台，跟axios差不多；
+	还有该如何动态获取数据？就是点击输入不同的页码，从后台获取不同的数据；
+7-16：猜你喜欢的布局；
 
 
 https://pan.baidu.com/s/1uaMYKifsHXQA8bJCxDmL7w
 备忘的知识点：
 xshell 模拟linx命令
 手写代码与模块代码分开打包；缓存模块代码，更改手写代码的hash名字；
-
+7-17-18：加载更多：
+	点击加载更多已经可以实现；只要请求到数据然后加入state就行，要用到concat方法
 
 
 所用到的知识点-------------
