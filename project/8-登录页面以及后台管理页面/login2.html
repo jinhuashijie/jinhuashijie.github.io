@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例-某宝销售后台</title>
+    <link rel="stylesheet" type="text/css" href="css/login2.css">
+	<script src="js/jquery1.min.js"></script>
+	<script src="js/bootstrap1.min.js"></script>
+<style type="text/css">
+</style>
+
+
+</head>
+<body>
+<header>
+    <div class="head0">
+        <img src="img/admin_logo.png">
+        <div class="menu1">
+            <div class="a1"><span><a href="">访问站点</a></span></div>
+            <div class="a2" data-target="#myCarousel" data-slide-to="1"><span><a href="">管理员：DeathGhost</a></span></div>
+            <div class="a3"><span><a href="">清除缓存</a></span></div>
+            <div class="a4" data-target="#myCarousel" data-slide-to="2"><span><a href="">修改密码</a></span></div>
+            <div class="a5"><span><a href="">安全退出</a></span></div>
+        </div>
+    </div>
+</header>
+    <div class="leftside">
+        <div class="homepage" data-target="#myCarousel" data-slide-to="0">起始页</div>
+        <div class="panel-group" id="accordion">
+        	<div class="panel panel-default">
+	        	<div class="panel-heading">
+        			<h4 class="panel-title">
+	        			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+	    				订单管理
+	    				</a>
+	        		</h4>
+        		</div>
+	        	<div id="collapseOne" class="panel-collapse collapse in">
+	        		<div class="panel-body" data-target="#myCarousel" data-slide-to="3" class="active">
+        				订单列表
+	                </div>
+	             </div>
+            </div>
+	        <div class="panel panel-default">
+		        <div class="panel-heading">
+			         <h4 class="panel-title">
+				        <a data-toggle="collapse" data-parent="#accordion" 
+				          href="#collapseTwo">
+				          商品管理
+				         </a>
+		             </h4>
+	            </div>
+		        <div id="collapseTwo" class="panel-collapse collapse" >
+	                <div class="panel-body" data-target="#myCarousel" data-slide-to="4" >
+		                 商品列表
+	                </div>
+	                <div class="panel-body" data-target="#myCarousel" data-slide-to="5" >
+		                 商品分类
+	                </div>
+	                <div class="panel-body" data-target="#myCarousel" data-slide-to="6" >
+		                 商品回收站
+	                </div>
+		        </div>
+	        </div>
+	        <div class="panel panel-default">
+		        <div class="panel-heading">
+	                <h4 class="panel-title">
+			            <a data-toggle="collapse" data-parent="#accordion" 
+				            href="#collapseThree">
+	                       会员管理
+			            </a>
+	                </h4>
+		        </div>
+	            <div id="collapseThree" class="panel-collapse collapse">
+		            <div class="panel-body" data-target="#myCarousel" data-slide-to="7">
+				          会员列表
+	                </div>
+	                <div class="panel-body" data-target="#myCarousel" data-slide-to="8">
+				          添加会员
+	                </div>
+	                <div class="panel-body" data-target="#myCarousel" data-slide-to="9">
+				          会员等级
+	                </div>
+	                <div class="panel-body" data-target="#myCarousel" data-slide-to="10">
+				          会员留言
+	                </div>
+		        </div>
+	        </div>
+	        <div class="panel panel-default">
+		        <div class="panel-heading">
+	                <h4 class="panel-title">
+			            <a data-toggle="collapse" data-parent="#accordion" 
+				            href="#collapseFour">
+	                       站点管理
+			            </a>
+	                </h4>
+		        </div>
+	            <div id="collapseFour" class="panel-collapse collapse">
+		            <div class="panel-body" data-target="#myCarousel" data-slide-to="11">
+				          站点基本管理
+	                </div>
+	                <div class="panel-body" data-target="#myCarousel" data-slide-to="12">
+				          站点管理员
+	                </div>
+		        </div>
+	        </div>
+	        <div class="panel panel-default">
+		        <div class="panel-heading">
+	                <h4 class="panel-title">
+			            <a data-toggle="collapse" data-parent="#accordion" 
+				            href="#collapseFive">
+	                       广告管理
+			            </a>
+	                </h4>
+		        </div>
+	            <div id="collapseFive" class="panel-collapse collapse">
+		            <div class="panel-body" data-target="#myCarousel" data-slide-to="13">
+				          广告列表
+	                </div>
+		        </div>
+	        </div>
+        </div>
+    </div>
+    <div id="myCarousel" class="carousel"> 
+		<div class="carousel-inner">
+			<div class="item active">
+				<table class="homepage-1" border=2  cellpadding=0 cellspacing=0>
+				    <tr>
+				        <th style="width:100px;height: 20px;background: #555555;color: #E6D7D7;line-height: 20px;padding-top: 20px;padding-left: 10px;border-bottom:1px solid #242020;text-align: 10%; " colspan=3>
+				            <div class="thimg"><img src="img/admin_bg.png"></div> <div class="thtext">欢迎回到**站点管理中心</div></th>
+				    </tr>
+				    <tr>
+				        <th style="width:1180px;height: 20px;background: #555555;color: #E6D7D7;line-height: 20px;padding-top: 20px;padding-left: 10px;border-bottom:1px solid #343434;border-top:none;" colspan=3>
+				            <div class="tr3">订单统计信息</div> 
+				        </th>
+				    </tr>
+				    <tr style="border:none;">
+				        <th style="width:380px;height: 50px;border:none;color: #F6F2F2;">待发货订单:539</th>
+				        <th style="width:380px;height: 20px;border:none;color: #F6F2F2;">未确认订单：23</th>
+				        <th style="width:380px;height: 20px;border:none;color: #F6F2F2;">已成交订单：1282</th>
+				    </tr>
+				    <tr>
+				        <th style="width:1180px;height: 20px;background: #555555;color: #E6D7D7;line-height: 20px;padding-top: 20px;padding-left: 10px;border-bottom:1px solid #343434;border-top:none;" colspan=3>
+				            <div class="tr3">商户统计信息</div> 
+				        </th>
+				    </tr>
+				    <tr >
+				        <th style="height: 40px;background:#555555;color: #F6F2F2;border:none;">店铺总数量：1252</th>
+				        <th style="height: 40px;background:#555555;color: white;border:none;">商品总数量：13252</th>
+				        <th style="height: 40px;background:#555555;color: white;border:none;">在线实时交易统计：1282元</th>
+				    </tr>
+				    <tr style="margin-top: -10px;">
+				        <th style="height: 40px;background:#555555;color: white;border:none;">酒吧类店铺：128家</th>
+				        <th style="height: 40px;background:#555555;color: white;border:none;">家政服务类店铺：300家</th>
+				        <th style="height: 40px;background:#555555;color: white;border:none;">外卖类店铺：100家</th>
+				    </tr>
+				    <tr>
+				        <th style="width:1180px;height: 20px;background: #555555;color: #E6D7D7;line-height: 20px;padding-top: 20px;padding-left: 10px;border-bottom:1px solid #343434;border-top:none;" colspan=3>
+				            <div class="tr3">会员统计信息</div> 
+				        </th>
+				    </tr>
+				    <tr>
+				        <th style="width:380px;height: 50px;border:none;color: #F6F2F2;">黄金会员：456</th>
+				        <th  style="width:380px;height: 50px;border:none;color: #F6F2F2;">白金会员：482</th>
+				        <th  style="width:380px;height: 50px;border:none;color: #F6F2F2;">商户会员：568</th>
+				    </tr>
+				    <tr>
+				        <th style="width:1180px;height: 20px;background: #555555;color: #E6D7D7;line-height: 20px;padding-top: 20px;padding-left: 10px;border-bottom:1px solid #343434;border-top:none;" colspan=3>
+				            <div class="tr3">访问统计</div> 
+				        </th>
+				    </tr>
+				    <tr>
+				        <th  style="width:380px;height: 50px;border:none;color: #F6F2F2;">今日访问：12345</th>
+				        <th  style="width:380px;height: 50px;border:none;color: #F6F2F2;">当前在线人数：98</th>
+				        <th  style="width:380px;height: 50px;border:none;color: #F6F2F2;">最新留言：10</th>
+				    </tr>
+				    <tr>
+				        <th style="width:1180px;height: 20px;background: #555555;color: #E6D7D7;line-height: 20px;padding-top: 20px;padding-left: 10px;border-bottom:1px solid #343434;border-top:none;" colspan=3>
+				            <div class="tr3">系统信息</div> 
+				        </th>
+				    </tr>
+				    <tr>
+				        <th  style="height: 40px;background:#555555;color: #F6F2F2;border:none;">服务器操作系统：win7</th>
+				        <th style="height: 40px;background:#555555;color: #F6F2F2;border:none;">WEB服务器：algin</th>
+				        <th style="height: 40px;background:#555555;color: #F6F2F2;border:none;">MySQL版本：5.5.0</th>
+				    </tr>
+				    <tr>
+				        <th style="height: 40px;background:#555555;color: #F6F2F2;border:none;">安全模式：否</th>
+				        <th style="height: 40px;background:#555555;color: #F6F2F2;border:none;">安全模式GID:否</th>
+				        <th style="height: 40px;background:#555555;color: #F6F2F2;border:none;">时区设置：Europe/Paris</th>
+				    </tr>
+				    <tr>
+				        <th style="height: 40px;background:#555555;color: #F6F2F2;border:none;">编码;UTR-8</th>
+				    </tr>
+				</table>
+			</div>
+			<div class="item" style="background: #FFFFFF">
+				<table    cellpadding=0 cellspacing=0 style="border:1px solid #DDDDDD;border-top:0px;border-left:0px;border-right: 0px;">
+				    <tr>
+				        <td style="width:1000px;height: 45px;background:#FFFFFF;color: #3D3D91;line-height: 20px;padding-top: 20px;padding-left: 10px;border-bottom: 1px !important; text-align: left; ">
+				            <div class="thimg2"><img src="img/admin_bg.png"></div>
+				            <div class="thtext2-1">管理员列表</div>
+				        </td>
+				        <td style="width: 220px;border:1px;color:#FFFFFC;font-size: 12px;">
+				            <div class="thtext2-2" data-target="#myCarousel" data-slide-to="2" style="cursor:pointer;">+添加管理员</div> 
+				        </td>
+				    </tr>
+				</table>
+				<table style="margin-top: 10px;position: relative;" cellspacing="0" cellpadding="0" border=1>
+				    <tr>
+				        <td style="width:190px;text-align: center;border:0px solid red;border-right:1px solid #808080; height: 30px;line-height: 30px;" >管理员账户</td>
+				        <td style="width:310px;text-align: center;border:0px solid red;border-right:1px solid #808080;">电子邮箱地址</td>
+				        <td style="width:270px;text-align: center;border:0px solid red;border-right:1px solid #808080;">加入时间</td>
+				        <td style="width:270px;text-align: center;border:0px solid red;border-right:1px solid #808080;">最后登录时间</td>
+				        <td style="width:100px;text-align: center;border:0px solid red;">操作</td>
+				    </tr>
+				         <td style="height: 30px;line-height: 30px;border:0px solid red;border-right:1px solid #808080;border-top:1px solid #808080;background: #F1F1F1;">DeathGhost</td>
+				         <td style="border:0px solid red;border-right:1px solid #808080;border-top:1px solid #808080;background: #F1F1F1;">DeathGhost@sin.cn</td>
+				         <td style="text-align: center;border:0px solid red;border-right:1px solid #808080;border-top:1px solid #808080;background: #F1F1F1;">2015-04-18 17:38</td>
+				         <td style="text-align: center;border:0px solid red;border-right:1px solid #808080;border-top:1px solid #808080;background: #F1F1F1;">5015-04-19 15:38</td>
+				         <td style="border:0px solid red;border-top:1px solid #808080;background: #F1F1F1;">
+				             <img src="img/icon_edit.gif" style="margin-left: 30px;background: #F1F1F1;cursor:pointer;" data-target="#myCarousel" data-slide-to="2">
+				             <img src="img/icon_drop.gif" >
+				         </td>
+				    <tr>
+				    </tr>
+				</table>
+			</div>
+			<div class="item" style="background: white;width:100%;height: 100%;">
+				<table cellpadding=0 cellspacing=0 style="border:1px solid #DDDDDD;border-top:0px;border-left:0px;border-right: 0px;background: #FFFFFF;">
+				    <tr>
+				        <td style="width:30px;height: 60px;text-align: left;position: relative;">
+				            <div class="thimg3"><img src="img/admin_bg.png"></div>
+				        </td>
+				        <td style="padding-top: 27px;">
+				            修改密码
+				        </td>
+				        <td style="width:980px;">
+				        </td>
+				    </tr>
+				</table>
+				<form style="padding-left: 20px;text-align: right;width:290px;">
+				    <div>账号：<input type="text" name="" style="height: 20px;margin-top: 20px;"></div> 
+				    <div>邮箱：<input type="email" name="" style="height: 20px;margin-top: 20px;"></div>
+				    <div>旧密码：<input type="password" name="" style="height: 20px;margin-top: 20px;"></div>
+				    <div>新密码：<input type="password" name="" style="height: 20px;margin-top: 20px;"></div>
+				    <div>再次确认密码：<input type="password" name="" style="height: 20px;margin-top: 20px;"></div>
+				    <div><input type="submit"  name="保存" value="保存" style="left:-124px;position: relative; margin-top: 10px;width: 50px;height: 25px;text-align: center;"> </div>
+				</form>
+			</div>
+			<div class="item" style="background: white;">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: 0px;"></div>
+				        </td>
+				        <td style="width: 800px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">订单列表</td>
+				    </tr>
+				</table>
+				<table border=0 cellpadding="0" cellspacing="0" style="border-bottom:1px solid #DDDDDD;">
+				    <tr>
+				        <td style="width:20px;height:20px;padding-left:18px; background:#FFFFFF;line-height: 15px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;padding-top:9px;"><img src="img/icon_search.gif" style=""></td>
+				        <td style="width: 250px;height: 30px;padding-left:2px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;"><input type="text" name="" value="输入订单编号或收件人姓名..." style="width: 250px;height: 23px;"></td>
+				        <td style="width:auto;height: 30px;padding-left:3px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <select style="height: 27px;">
+				                <option>未付款</option>
+				                <option>已付款</option>
+				            </select> 
+				        </td>
+				        <td style="width: 700px;height:27px;padding-left:3px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;"><input type="button" name="" value="查询" style="height: 27px;"> </td>
+				    </tr>
+				</table>
+				<table>
+				    <tr>
+				        <td style="width:210px;height:40px;  background:#FFFFFF;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align: center;">订单编号</td>
+				        <td style="width:200px;height:40px;  background:#FFFFFF;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align: center;">下单时间</td>
+				        <td style="width:460px;height:40px;  background:#FFFFFF;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align: center;">收件人</td>
+				        <td style="width:100px;height:40px;  background:#FFFFFF;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align: center;">订单金额</td>
+				        <td style="width:90px;height:40px;  background:#FFFFFF;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align: center;">订单状态</td>
+				        <td style="width:80px;height:40px;  background:#FFFFFF;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">操作</td>
+				    </tr>
+				    <tr>
+				        <td style="width:150px;height:40px; background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:left;"><input type="checkbox" name=""> 2015041803225</td>
+				        <td style="width:150px;height:40px;background:#F1F1F1;line-height:15px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">DeatGhost</br>2015-04-18 12:00</td>
+				        <td style="width:150px;height:40px;background:#F1F1F1;line-height:15px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:left;">张三[18309275673]</br>陕西省西安市未央区255号</td>
+				        <td style="width:150px;height:40px;background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">￥58.00</td>
+				        <td style="width:150px;height:40px;background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">未付款</td>
+				        <td style="width:150px;height:40px;background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><img src="img/icon_view.gif"><img src="img/icon_trash.gif"></td>
+				        <td></td>
+				    </tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" style="color: white;">
+				    <tr>
+				        <td style="width:20px;height:40px;  background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div></div><input type="checkbox" name=""></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">全选</div> </td>
+				        <td style="width:95px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">打印订单</div></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;line-height: 25px;">配货</div></td>
+				        <td style="width:150px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">删除订单</div></td>
+				        <td style="width:500px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"></td>
+				        <td style="width:60px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 55px;height: 25px;background:#85A4CB;">第一页</div></td>
+				        <td style="width:28px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 22px;height: 25px;background:#85A4CB;">1</div></td>
+				        <td style="width:150px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width:80px;height: 25px;background:#85A4CB;">最后一页</div></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png"></div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">订单列表</td>
+				        <td style="width: 220px;border-bottom:1px solid #DDDDDD; color:#FFFFFC;font-size: 12px; text-align: center;">
+				            <div class="thtext2-2" data-target="#myCarousel" data-slide-to="2" style="cursor:pointer;">+添加商品</div> 
+				        </td>
+				    </tr>
+				</table>
+				<table border=0 cellpadding="0" cellspacing="0" style="border-bottom:1px solid #DDDDDD;padding-left: 10px;">
+				    <tr>
+				        <td style="width:auto;height: 30px;padding-left:3px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <select style="height: 27px;">
+				                <option>A店铺</option>
+				                <option>B店铺</option>
+				            </select> 
+				        </td>
+				        <td style="width: 250px;height: 30px;padding-left:2px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;"><input type="text" name="" value="输入产品名称..." style="width: 250px;height: 23px;"></td>
+				        
+				        <td style="width: 1000px;height:27px;padding-left:3px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;"><input type="button" name="" value="查询" style="height: 27px;"> </td>
+				    </tr>
+				</table>
+				<table border=1 cellpadding="0" cellspacing="0" style="text-align:center;">
+				    <tr>
+				        <td style="width: 90px;text-align: center;border:none;border-top: 0px solid red;">ID编号</td>
+				        <td style="width: 60px;text-align: center;">产品</td>
+				        <td style="width: 380px;text-align: center;">名称</td>
+				        <td style="width: 100px;text-align: center;">市场价</td>
+				        <td style="width: 100px;text-align: center;">会员价</td>
+				        <td style="width: 100px;text-align: center;">库存</td>
+				        <td style="width: 60px;text-align: center;">精品</td>
+				        <td style="width: 60px;text-align: center;">新品</td>
+				        <td style="width: 60px;text-align: center;">热销</td>
+				        <td style="width: 130px;text-align: center;">操作</td>
+				    </tr>
+				    <tr>
+				        <td style="font-size: 14px;"> 
+				            <input type="checkbox" name="">0
+				        </td>
+				        <td><img src="img/"></td>
+				        <td style="font-size: 14px;">这是产品或服务名称{宽度350px；样式自动截取，已省略...</td>
+				        <td>￥ 0.00</td>
+				        <td>￥ 0.00</td>
+				        <td>589件</td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><img src="img/no.gif"></td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><img src="img/icon_view.gif"><img src="img/icon_edit.gif"><img src="img/icon_drop.gif"></td>
+				    </tr>
+				    <tr>
+				        <td style="font-size: 14px;"> 
+				            <input type="checkbox" name="">0
+				        </td>
+				        <td><img src="img/"></td>
+				        <td style="font-size: 14px;">这是产品或服务名称{宽度350px；样式自动截取，已省略...</td>
+				        <td>￥ 0.00</td>
+				        <td>￥ 0.00</td>
+				        <td>589件</td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><img src="img/no.gif"></td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><img src="img/icon_view.gif"><img src="img/icon_edit.gif"><img src="img/icon_drop.gif"></td>
+				    </tr>
+				    <tr>
+				        <td style="font-size: 14px;"> 
+				            <input type="checkbox" name="">0
+				        </td>
+				        <td><img src="img/"></td>
+				        <td style="font-size: 14px;">这是产品或服务名称{宽度350px；样式自动截取，已省略...</td>
+				        <td>￥ 0.00</td>
+				        <td>￥ 0.00</td>
+				        <td>589件</td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><img src="img/no.gif"></td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><img src="img/icon_view.gif"><img src="img/icon_edit.gif"><img src="img/icon_drop.gif"></td>
+				    </tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" style="color: white;">
+				    <tr>
+				        <td style="width:20px;height:40px;  background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div></div><input type="checkbox" name=""></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">全选</div> </td>
+				        
+				        <td style="width:150px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">删除订单</div></td>
+				        <td style="width:500px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"></td>
+				        <td style="width:60px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 55px;height: 25px;background:#85A4CB;">第一页</div></td>
+				        <td style="width:28px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 22px;height: 25px;background:#85A4CB;">1</div></td>
+				        <td style="width:450px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width:80px;height: 25px;background:#85A4CB;">最后一页</div></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item" style="background: white;">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;border-bottom: 1px solid #DDDDDD;padding-bottom: 5px;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: 0px;"> </div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">产品分类</td>
+				        <td style="width: 220px;border-bottom:1px solid #DDDDDD; color:#FFFFFC;font-size: 12px; text-align: center;padding-bottom: 5px;">
+				            <div class="thtext2-2" data-target="#myCarousel" data-slide-to="2" style="cursor:pointer;">+添加新分类</div> 
+				        </td>
+				    </tr>
+				</table>
+				<table border="1 #DDDDDD" cellspacing="0" cellpadding="0" style="text-align: center;font-size: 13px;border:1px solid #DDDDDD;">
+				    <tr>
+				        <td style="width: 290px;height: 30px;line-height: 30px;">分类名称</td>
+				        <td style="width: 200px;">产品数量</td>
+				        <td style="width: 110px;">单位</td>
+				        <td style="width: 200px;">是否显示</td>
+				        <td style="width: 220px;">排序</td>
+				        <td style="width: 110px;">操作</td>
+				    </tr>
+				    <tr>
+				        <td style="height: 26px;line-height: 26px;text-align: left;"><input type="checkbox" name="">西餐</td>
+				        <td>1</td>
+				        <td>盘</td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><input type="text" name="" value="0" text-align="center" style="width: 20px;"></td>
+				        <td><img src="img/icon_trash.gif"></td>
+				    </tr>
+				    <tr>
+				        <td style="height: 26px;line-height: 26px;padding-right: 180px;"><input type="checkbox" name="">西餐</td>
+				        <td>1</td>
+				        <td>盘</td>
+				        <td><img src="img/yes.gif"></td>
+				        <td><input type="text" name="" value="0" text-align="center" style="width: 20px;"></td>
+				        <td><img src="img/icon_trash.gif"></td>
+				    </tr>
+				    <tr>
+				        <td style="height: 26px;line-height: 26px;text-align: left;"><input type="checkbox" name="">西餐</td>
+				        <td>1</td>
+				        <td>盘</td>
+				        <td><img src="img/no.gif"></td>
+				        <td><input type="text" name="" value="0" text-align="center" style="width: 20px;"></td>
+				        <td><img src="img/icon_trash.gif"></td>
+				    </tr>
+				    <tr>
+				        <td style="height: 26px;line-height: 26px;padding-right: 180px;"><input type="checkbox" name="">西餐</td>
+				        <td>1</td>
+				        <td>盘</td>
+				        <td><img src="img/no.gif"></td>
+				        <td><input type="text" name="" value="0" text-align="center" style="width: 20px;"></td>
+				        <td><img src="img/icon_trash.gif"></td>
+				    </tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" style="color: white;">
+				    <tr>
+				        <td style="width:20px;height:40px;  background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div></div><input type="checkbox" name=""></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">全选</div> </td>
+				        
+				        <td style="width:150px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">删除订单</div></td>
+				        <td style="width:700px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"></td>
+				        <td style="width:60px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 55px;height: 25px;background:#85A4CB;">第一页</div></td>
+				        <td style="width:28px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 22px;height: 25px;background:#85A4CB;">1</div></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width:80px;height: 25px;background:#85A4CB;">最后一页</div></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;border-bottom: 1px solid #DDDDDD;padding-bottom: 5px;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: 0px;"> </div>
+				        </td>
+				        <td style="width: 1100px;height: 30px;background:#FFFFFF;line-height: 30px;padding-top: 20px;border-left: 0px;">商品回收站</td>
+				    </tr>
+				</table>
+				<table cellspacing=0 cellpadding=0 border=0 style="margin-top:10px;"> 
+				    <tr>
+				        <td style="width: 140px;height: 30px;line-height: 30px;text-align: center;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">ID编号</td>
+				        <td style="width: 60px;height: 30px;line-height: 30px;text-align: center;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;">产品</td>
+				        <td style="width: 360px;height: 30px;line-height: 30px;text-align: center;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;">名称</td>
+				        <td style="width: 270px;height: 30px;line-height: 30px;text-align: center;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;">删除时间</td>
+				        <td style="width: 310px;height: 30px;line-height: 30px;text-align: center;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;">操作</td>
+				    </tr>
+				    <tr>
+				        <td  style="width: 100px;height: 30px;line-height: 30px;text-align: center;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;border-left:1px solid #DDDDDD;"><input type="checkbox" name="">0</td>
+				        <td  style="width: 100px;height: 30px;line-height: 30px;text-align: center;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;"><img src="img/"></td>
+				        <td style="width: 100px;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;">
+				            <div style="width: 300px;text-overflow : ellipsis;overflow: hidden;"> <nobr>这是产品或服务名称(宽度350px,样式自动截取，以省略号表示哦，程序可以处理“截取字符串”)</nobr></div>
+				        </td>
+				        <td style="width: 100px;height: 30px;line-height: 30px;text-align: center;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;">2015-04-17</td>
+				        <td style="width: 100px;height: 30px;line-height: 30px;text-align: center;border-right:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;">恢复 彻底删除</td>
+				    </tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" style="color: white;">
+				    <tr>
+				        <td style="width:20px;height:40px;  background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div></div><input type="checkbox" name=""></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">全选</div> </td>
+				        <td style="width:130px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 120px;height: 25px;background:#6C6C6C;text-align:center;">批量彻底删除</div></td>
+				        <td style="width:150px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">批量恢复</div></td>
+				        <td style="width:1000px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"></td>
+				        <td style="width:60px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 55px;height: 25px;background:#85A4CB;">第一页</div></td>
+				        <td style="width:28px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 22px;height: 25px;background:#85A4CB;">1</div></td>
+				        <td style="width:450px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width:80px;height: 25px;background:#85A4CB;">最后一页</div></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: -89px;"></div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">会员列表</td>
+				        <td style="width: 220px;border-bottom:1px solid #DDDDDD; color:#FFFFFC;font-size: 12px; text-align: center;">
+				            <div class="thtext2-2" data-target="#myCarousel" data-slide-to="2" style="cursor:pointer;">+添加新会员</div> 
+				        </td>
+				    </tr>
+				</table>
+				<table border=0 cellpadding="0" cellspacing="0" style="border-bottom:1px solid #DDDDDD;padding-left: 10px;">
+				    <tr>
+				        <td style="width:auto;height: 30px;padding-left:3px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <select style="height: 27px;">
+				                <option>选择会员等级</option>
+				                <option>白金会员</option>
+				                <option>黄金会员</option>
+				            </select> 
+				        </td>
+				        <td style="width: 250px;height: 30px;padding-left:2px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;"><input type="text" name="" value="输入会员昵称。姓名.手机号码..." style="width: 250px;height: 23px;"></td>
+				        
+				        <td style="width: 1000px;height:27px;padding-left:3px; background:#FFFFFF;line-height: 30px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;"><input type="button" name="" value="查询" style="height: 27px;"> </td>
+				    </tr>
+				</table>
+				<table border=0 cellpadding="0" cellspacing="0" style="text-align:center;">
+				    <tr >
+				        <td style="width: 50px;height:40px;line-height: 40px; text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">编号</td>
+				        <td style="width: 130px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">会员昵称</td>
+				        <td style="width: 220px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">邮件地址</td>
+				        <td style="width: 150px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">手机号码</td>
+				        <td style="width: 85px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">是否验证</td>
+				        <td style="width: 160px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">可用资金</td>
+				        <td style="width: 115px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">冻结资金</td>
+				        <td style="width: 130px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">注册日期</td>
+				        <td style="width: 90px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">操作</td>
+				    </tr>
+				    <tr style="background: #F1F1F1;">
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;height:40px;line-height: 40px; "> 
+				            <input type="checkbox" name="">0
+				        </td>
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">DeathGhost</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">DeathGhost@sina.cn</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">18309275673</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/yes.gif"></td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">￥ 5000000.00</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">￥ 300.00</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">2015-04-17</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/icon_view.gif"><img src="img/icon_edit.gif"><img src="img/icon_drop.gif"></td>
+				    </tr>
+				    <tr>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;height:40px;line-height: 40px; "> 
+				            <input type="checkbox" name="">0
+				        </td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">DeathGhost</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">DeathGhost@sina.cn</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">18309275673</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/yes.gif"></td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">￥ 5000000.00</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">￥ 300.00</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">2015-04-17</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/icon_view.gif"><img src="img/icon_edit.gif"><img src="img/icon_drop.gif"></td>
+				    </tr>    
+				</table>
+				<table cellspacing="0" cellpadding="0" style="color: white;">
+				    <tr>
+				        <td style="width:20px;height:40px;  background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div></div><input type="checkbox" name=""></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">全选</div> </td>
+				        
+				        <td style="width:150px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">删除订单</div></td>
+				        <td style="width:500px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"></td>
+				        <td style="width:60px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 55px;height: 25px;background:#85A4CB;">第一页</div></td>
+				        <td style="width:28px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 22px;height: 25px;background:#85A4CB;">1</div></td>
+				        <td style="width:450px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width:80px;height: 25px;background:#85A4CB;">最后一页</div></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: -121px;"></div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">添加新会员</td>
+				    </tr>
+				</table>
+				<table cellpadding="0" cellspacing="0" style="margin-top:10px;margin-left: 10px;">
+				    <tr>
+				        <td style="width: 100px;padding-left:50px;text-align: right;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">会员昵称:</td>
+				        <td style="width: 1050px;text-align: left;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;padding-left: 5px;border-right:1px solid #DDDDDD;padding-left: 10px;"><input type="text" name="" style="height: 25px;"></td>
+				    </tr>
+				    <tr>
+				        <td style="width: 100px;padding-left:50px;text-align: right;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">会员邮箱:</td>
+				        <td style="width: 1050px;text-align: left;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;padding-left: 5px;border-right:1px solid #DDDDDD;padding-left: 10px;"><input type="text" name="" style="height: 25px;"></td>
+				    </tr>
+				    <tr>
+				        <td style="width: 100px;padding-left:50px;text-align: right;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">设置密码:</td>
+				        <td style="width: 1050px;text-align: left;padding-left: 5px;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;padding-left: 10px;"><input type="text" name="" style="height: 25px;"></td>
+				    </tr>
+				    <tr>
+				        <td style="width: 100px;padding-left:50px;text-align: right;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">手机号码:</td>
+				        <td style="width: 1050px;text-align: left;padding-left: 5px;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;padding-left: 10px;"><input type="text" name="" style="height: 25px;"></td>
+				    </tr>
+				    <tr>
+				        <td style="width: 100px;padding-left:50px;text-align: right;height: 40px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;"></td>
+				        <td style="width: 1050px;text-align: left;height: 40px;padding-left: 5px; border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;padding-left: 10px;"><div style="width: 100px;height: 30px;background:#E8E8E8;border-radius: 2px;line-height: 30px;text-align: center;">添加新用户</div> </td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: -89px;"></div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">会员列表</td>
+				    </tr>
+				</table>
+				<table border=0 cellpadding="0" cellspacing="0" style="text-align:center;">
+				    <tr >
+				        <td style="width: 360px;height:40px;line-height: 40px; text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">会员类型</td>
+				        <td style="width: 210px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">等级图标</td>
+				        <td style="width: 240px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">等级名称</td>
+				        <td style="width: 210px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">等级折扣</td>
+				        <td style="width: 110px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">操作</td>
+				    </tr>
+				    <tr style="background: #F1F1F1;">
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;height:40px;line-height: 40px; "> 
+				            <input type="checkbox" name="">普通用户组
+				        </td>
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/"></td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">普通会员</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">88%</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/icon_drop.gif"></td>
+				    </tr>
+				    <tr>
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;height:40px;line-height: 40px; "> 
+				            <input type="checkbox" name="">普通用户组
+				        </td>
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/"></td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">普通会员</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">88%</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/icon_drop.gif"></td>
+				    </tr>   
+				</table>
+			</div>
+			<div class="item">
+			    <table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: -89px;"></div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">会员留言</td>
+				    </tr>
+				</table>
+				<table border=0 cellpadding="0" cellspacing="0" style="text-align:center;">
+				    <tr >
+				        <td style="width: 360px;height:40px;line-height: 40px; text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">会员账号</td>
+				        <td style="width: 210px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">留言时间</td>
+				        <td style="width: 240px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">处理状态</td>
+				        <td style="width: 210px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">留言内容</td>
+				        <td style="width: 210px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">管理员回复</td>
+				        <td style="width: 110px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">操作</td>
+				    </tr>
+				    <tr style="background: #F1F1F1;">
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;height:40px;line-height: 40px; "> 
+				            <input type="checkbox" name="">DeathGhost
+				        </td>
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">2015-04-18 10:39</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">未处理</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">这里是留言内容</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">这里是留言内容</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/icon_drop.gif"></td>
+				    </tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" >
+				    <tr>
+				        <td style="width:1000px;height:40px;  background:white;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"></td>
+				        <td style="width:60px;height:40px;  background:white;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 55px;height: 25px;background:#85A4CB;">第一页</div></td>
+				        <td style="width:28px;height:40px;  background:white;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 22px;height: 25px;background:#85A4CB;">1</div></td>
+				        <td style="width:90px;height:40px;  background:white;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:right;"><div style="width:80px;height: 25px;background:#85A4CB;text-align: center;">最后一页</div></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">	
+			    <table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: -214px;"></div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">站点设置</td>
+				    </tr>
+				</table>
+			    <table border=0 cellspacing="0" cellpadding="0">
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">站点名称:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 200px;height: 20px;padding-left: 10px;"></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">关键词设置:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 200px;height: 20px;padding-left: 10px;"></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">站点描述:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 200px;height: 20px;padding-left: 10px;"></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">ICP备案号:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 200px;height: 20px;padding-left: 10px;"></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">公司名称:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 200px;height: 20px;padding-left: 10px;"></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">电子邮件:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 200px;height: 20px;padding-left: 10px;"></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">联系电话:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 200px;height: 20px;padding-left: 10px;"></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;line-height: 35px;font-size: 14px;">关闭站点:</td>
+			            <td style="width: 50px;"><input type="checkbox" name="" style="padding-left: 10px;">是<input type="checkbox" name="" style="padding-left: 10px;">否</td>
+			            
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 190px;text-align: right;padding-right: 10px;line-height:190px;font-size: 14px;">关闭站点提示:</td>
+			            <td style="width: 800px;"><input type="text" name="" style="width: 400px;height:170px;padding-left: 10px;line-height:20px;"  value="站点正在测试中" ></td>
+			        </tr>
+			        <tr>
+			            <td style="width: 150px;height: 35px;text-align: right;padding-right: 10px;font-size: 14px;"></td>
+			            <td style="width: 150px;"><input type="button" name="" value="保存" style=" text-align: center;width:50px;"></td>
+			            
+			        </tr>
+			    </table>
+			</div>
+			<div class="item">
+				<table border=0 cellspacing=0 cellpadding=0 style="background: white;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: -89px;"></div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">会员列表</td>
+				        <td style="width: 220px;border-bottom:1px solid #DDDDDD; color:#FFFFFC;font-size: 12px; text-align: center;padding-bottom: 5px;">
+				            <div class="thtext2-2" data-target="#myCarousel" data-slide-to="2" style="cursor:pointer;">+添加管理员</div> 
+				        </td>
+				    </tr>
+				</table>
+				<table border=0 cellpadding="0" cellspacing="0" style="text-align:center;">
+				    <tr >
+				        <td style="width:190px;height:40px;line-height: 40px; text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">管理员账号</td>
+				        <td style="width: 310px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">电子邮箱地址</td>
+				        <td style="width: 270px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">加入时间</td>
+				        <td style="width: 270px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">最后登陆时间</td>
+				        <td style="width: 100px;text-align: center;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;">操作</td>
+				    </tr>
+				    <tr style="background: #F1F1F1;">
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD;height:40px;line-height: 40px; "> 
+				            DeathGhost
+				        </td>
+				        <td style="font-size: 14px;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/"></td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">DeathGhost@sina.cn</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; ">2015-04-18 17:38</td>
+				        <td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;border-right:1px solid #DDDDDD;border-left:1px solid #DDDDDD; "><img src="img/icon_edit.gif"><img src="img/icon_drop.gif"></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">	
+			    <table border=0 cellspacing=0 cellpadding=0 style="background: white;padding-bottom: 5px;">
+				    <tr>
+				        <td style="width: 30px;height: 30px;padding-left: 20px; background:#FFFFFF;line-height: 30px;border-bottom: 1px solid #DDDDDD;padding-top: 20px;border-right: 0px;">
+				            <div class="thimg4"><img src="img/admin_bg.png" style="margin-left: 0px;"> </div>
+				        </td>
+				        <td style="width: 1000px;height: 30px;background:#FFFFFF;line-height: 30px;border-bottom:1px solid #DDDDDD;padding-top: 20px;border-left: 0px;">广告列表</td>
+				        <td style="width: 220px;border-bottom:1px solid #DDDDDD; color:#FFFFFC;font-size: 12px; text-align: center;padding-bottom: 5px;">
+				            <div class="thtext2-2" data-target="#myCarousel" data-slide-to="2" style="cursor:pointer;">+添加广告</div> 
+				        </td>
+				    </tr>
+				</table>
+				<table  cellspacing="0" cellpadding="0" style="text-align: center;font-size: 13px;">
+				    <tr>
+				        <td style="width: 300px;height: 30px;line-height: 30px;border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;">广告名称</td>
+				        <td style="width: 450px;border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;">广告位置</td>
+				        <td style="width: 220px;border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;">媒介类型</td>
+				        <td style="width: 180px;border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;">操作</td>
+				    </tr>
+				    <tr>
+				        <td style="height: 26px;line-height: 26px;text-align: left;border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;">五一劳动节</td>
+				        <td style="border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;">首页导航栏下方通知栏</td>
+				        <td style="border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;">图片</td>
+				        <td style="border-bottom: 1px solid #E8E8E8;border-top: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;border-left:1px solid #E8E8E8;"><img src="img/icon_trash.gif"></td>
+				    </tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" style="color: white;margin-top:10px;">
+				    <tr>
+				        <td style="width:20px;height:40px;  background:#F1F1F1;line-height:40px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div></div><input type="checkbox" name=""></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">全选</div> </td>
+				        
+				        <td style="width:150px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;">
+				            <div style="width: 80px;height: 25px;background:#6C6C6C;text-align:center;">删除订单</div></td>
+				        <td style="width:700px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"></td>
+				        <td style="width:60px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 55px;height: 25px;background:#85A4CB;">第一页</div></td>
+				        <td style="width:28px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width: 22px;height: 25px;background:#85A4CB;">1</div></td>
+				        <td style="width:100px;height:40px;  background:#F1F1F1;line-height:25px;border:1px solid #FFFFFF;border-top: 0;border-left: 0;border-right: 0;text-align:center;"><div style="width:80px;height: 25px;background:#85A4CB;">最后一页</div></td>
+				    </tr>
+				</table>
+			</div>
+			<div class="item">	
+			</div>
+			<div class="item">	
+			</div>
+			<div class="item">	
+			</div>
+			<div class="item">	
+			</div>
+		</div>
+	</div> 
+</body>
+</html>

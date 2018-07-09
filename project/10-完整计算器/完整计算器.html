@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>完整计算器</title>
+<link rel="stylesheet" type="text/css" href="css/a.css">
+<script type="text/javascript" src="js/a.js"></script>
+<body>
+<div class="container">
+    <button id="math" class="delete1" onclick="delete1()"> ←</button>
+    <div class="inputtype">
+        <input type="text" name="" class="input1" id="input1">
+        <input type="text" name="" class="input2"  id="input2">
+        <input type="text" name="" class="input3"  id="input3">
+        <input type="text" name=""  class="result" id="result">
+    </div>    
+    <div class="number">
+        <button class="" value="" onclick="num1()">1</button>
+        <button class="" value="" onclick="num2()">2</button>
+        <button class="" value="" onclick="num3()">3</button>
+        <button class="" value="" onclick="num4()">4</button>
+        <button class="" value="" onclick="num5()">5</button>
+        <button class="" value="" onclick="num6()">6</button>
+        <button class="" value="" onclick="num7()">7</button>
+        <button class="" value="" onclick="num8()">8</button>
+        <button class="" value="" onclick="num9()">9</button>
+        <button class="" value="" onclick="num11()">.</button>
+        <button class="" value="" onclick="num0()">0</button>
+        <button class="" style="color:white;background: #3A7F68" onclick="equals()" id="equals">=</button>
+    </div>
+    <div class="symbol">
+        <button class="" value="" onclick="plus()">+</button>
+        <button class="" value="" onclick="minus()">-</button>
+        <button class="" value="" onclick="multiply()">X</button>
+        <button class="" value="" onclick="divided()">÷</button>
+        <button class="" value="" onclick="percent()">%</button>
+        <button id="" onclick="square()">X²</button>
+        <button id="reset" onclick="reset()">C</button>
+    </div> 
+    <button id="math" class="math" onclick="math()"> √￣</button>
+    
+</div>
+</body>
+<script type="text/javascript">
+
+//改进
+//1：小数点不能重复输入
+//2：加了根号，平方，百分比
+//3：百分比会自动保留两位小数
+//4：当小数点超过6位时只保留6位；
+//5：增加了退格功能
+
+
+</script>
+</html>

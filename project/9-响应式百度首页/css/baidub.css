@@ -1,0 +1,434 @@
+@media screen and (max-width: 600px){
+  
+.pc{
+  display: none;
+}
+body{
+  min-width: 375px;
+  margin:0;
+  padding: 0;
+  font-size: 12px;
+}
+
+.phone{
+    width: 100%;
+    height:auto;
+    background:white ;
+    position: relative;
+    display: block;
+}
+.box1{
+    width:100% ;
+    height: auto;
+    background:white ;
+    float: left;
+}
+.box1 .img0{
+    width: 100%;
+    height: auto;
+}
+.box1 .img1{
+    width: 8%;
+    height: auto;
+    position: absolute;
+    margin-top: -65%;
+    margin-left:1%;
+    z-index: 5;
+}
+.box1 .img2 img{
+    width: 10%;
+    height: auto;
+    position: absolute;
+    margin-top: -66%;
+    margin-left:12%;
+    z-index: 5;
+}
+.box1 .img3 img{
+    width: 7%;
+    height: auto;
+    position: absolute;
+    margin-top: -61%;
+    margin-left:89%;
+    z-index: 5;
+}
+.box1 .img4 img{
+    width: 28%;
+    height: auto;
+    position: absolute;
+    margin-top: -54%;
+    margin-left:4%;
+    z-index: 5;
+}
+.box1 .img5 img{
+    width: 22%;
+    height: auto;
+    position: absolute;
+    margin-top: -33%;
+    margin-left:6%;
+    z-index: 5;
+}
+.box1 .img6 img{
+    width: 14%;
+    height: auto;
+    position: absolute;
+    margin-top: -50%;
+    margin-left:36%;
+    z-index: 5;
+}
+.box1 .img7 img{
+    width: 27%;
+    height: auto;
+    position: absolute;
+    margin-top: -45%;
+    margin-left:52%;
+    z-index: 5;
+}
+.box1 .img8 img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    margin-top: -24%;
+    margin-left:0%;
+    z-index: 5;
+}
+.box1 .img9 img{
+    width: 17%;
+    height: auto;
+    position: absolute;
+    margin-top: -30%;
+    margin-left:79%;
+    z-index: 5;
+}
+.box2{
+    width:100% ;
+    height: auto;
+    background: white;
+    position: relative;
+    float: left;
+    margin-top: -66%;
+    z-index: 7;
+    
+}
+.box2 .box2bg{
+  width: 100%;
+  height:auto;
+  margin:0;
+  padding:0;
+    
+}
+.box2 .login1 img{
+    width: 10%;
+    height:auto;
+    position: absolute;
+    margin-left: 87%;
+    margin-top: -64%;
+}
+.box2 .logo2 img{
+    width:42%;
+    height:auto;
+    position: absolute;
+    margin-left: 28%;
+    margin-top: -52%;
+}
+.box2 .tex{
+    width:57%;
+    height:15%;
+    position: absolute;
+    margin-left: 9%;
+    margin-top:-37%;
+}
+.logo2 .butt{
+    position: absolute;
+    width: 21%;
+    height: 16%;
+    font-size: 4vw;
+    text-align: center;
+    color: white;
+    background: #3388FF;
+    border:0px solid;
+    margin-left: 66%;
+    margin-top:-37%;
+    }
+.whole{
+  width: 100%;
+  height: 30%;
+  background:white;
+  position: absolute;
+  margin-top: -20%;
+  margin-left: 00%;
+  overflow: hidden;
+} 
+.whole1{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  margin-left:5%;
+  font-size: 1em;
+  margin-top: 0%;
+  background: white;
+  z-index: 5;
+} 
+.whole1-1{
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: white;
+  margin-top: 0%;
+  margin-left: 0%;
+  z-index: 5;
+
+}
+.whole1-1 img{
+  position: absolute;
+  margin-top:-910%;
+  width: 70%;
+  height: 2239%;
+  margin-left: 15%;
+}
+.whole1 p{
+    position: absolute;
+    margin-top: 93%;
+    margin-left:9%;
+    font-size: 5vw;
+}
+.whole2{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  margin-left:21%;
+  font-size: 1em;
+  margin-top: 0%;
+  background: white;
+  z-index: 5;
+} 
+.whole2-1{
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: white;
+  margin-top: 0%;
+  margin-left: 0%;
+  z-index: 5;
+
+}
+.whole2-1 img{
+  position: absolute;
+  margin-top:-1359%;
+  width: 70%;
+  height: 2275%;
+  margin-left: 15%;
+}
+.whole2 p{
+    position: absolute;
+    margin-top: 93%;
+    margin-left:9%;
+    font-size: 5vw;
+}
+.whole3{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  margin-left:37%;
+  font-size: 1em;
+  margin-top: 0%;
+  background: white;
+  z-index: 5;
+} 
+.whole3-1{
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: white;
+  margin-top: 0%;
+  margin-left: 0%;
+  z-index: 5;
+
+}
+.whole3-1 img{
+  position: absolute;
+  margin-top:-1156%;
+  width: 70%;
+  height: 2300%;
+  margin-left: 15%;
+}
+.whole3 p{
+    position: absolute;
+    margin-top: 93%;
+    margin-left:9%;
+    font-size: 5vw;
+}
+.whole4{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  margin-left:53%;
+  font-size: 1em;
+  margin-top: 0%;
+  background: white;
+  z-index: 5;
+} 
+.whole4-1{
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: white;
+  margin-top: 0%;
+  margin-left: 0%;
+  z-index: 5;
+
+}
+.whole4-1 img{
+  position: absolute;
+  margin-top:-1550%;
+  width: 70%;
+  height: 2239%;
+  margin-left: 15%;
+}
+.whole4 p{
+    position: absolute;
+    margin-top: 93%;
+    margin-left:9%;
+    font-size: 5vw;
+}
+.whole5{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  margin-left:69%;
+  font-size: 1em;
+  margin-top: 0%;
+  background: white;
+  z-index: 5;
+} 
+.whole5-1{
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: white;
+  margin-top: 0%;
+  margin-left: 0%;
+  z-index: 5;
+
+}
+.whole5-1 img{
+  position: absolute;
+  margin-top:-1406%;
+  width: 70%;
+  height: 2239%;
+  margin-left: 15%;
+}
+.whole5 p{
+    position: absolute;
+    margin-top: 93%;
+    margin-left:9%;
+    font-size: 5vw;
+}
+.whole6{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  margin-left:85%;
+  font-size: 1em;
+  margin-top: 0%;
+  background: white;
+  z-index: 5;
+} 
+.whole6-1{
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: white;
+  margin-top: 0%;
+  margin-left: 0%;
+  z-index: 5;
+
+}
+.whole6-1 img{
+  position: absolute;
+  margin-top:-1051%;
+  width: 70%;
+  height: 2239%;
+  margin-left: 15%;
+}
+.whole6 p{
+    position: absolute;
+    margin-top: 93%;
+    margin-left:9%;
+    font-size: 5vw;
+}
+.box3{
+    width:100% ;
+    height: auto;
+    background:white;
+    position: relative;
+    float: left;
+    margin-top: -2%;
+
+}
+.article1 p{
+   font-size: 4.5vw;
+   list-style: none;
+}
+.article1 img{
+    width: 33%;
+    height: 20%;
+    position: relative;
+    float: left;  
+}
+.box4{
+    width:100% ;
+    height: auto;
+    background: white;
+    position: relative;
+    float: left;
+
+}
+input:checked ~ .box2
+        {
+            opacity:1;
+            transition: 0.5s;
+            margin-top: 1%;
+
+        }
+        input:checked ~ .two
+        {
+            transition: 0.5s;
+            top:20px;
+            margin-top: 10%;
+            position: absolute;
+            opacity: 0.1;
+
+
+        }
+
+.two {
+    width: 42%;
+    height: 17%;
+    position: absolute;
+    margin-left: 2%;
+    margin-top:-4%;
+    z-index: 8;
+}
+
+.two img{
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-top:0;
+    z-index: 8;
+}
+.two2 img{
+    width: 8%;
+    height:20%;
+    position: relative;/**/
+    margin-top: -43%;
+    margin-left: 60%;
+    z-index: 9;
+}
+}

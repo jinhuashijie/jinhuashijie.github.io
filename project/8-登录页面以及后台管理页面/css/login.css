@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+      <title>无标题文档</title>
+      <style type="text/css">
+*{
+  margin:0;
+  padding:0;
+}
+.container{
+  margin:5px;
+}
+.middle{
+  float: left;
+  width: 50%;
+  height: 500px;
+  background: yellow;
+  margin:0 5px 0 5px; 
+      
+}
+.left{
+  float: left;
+  width: 20%;
+  height: 500px;
+  background: green;
+
+}
+.right{
+  float: left;
+  width: 20%;
+  height: 500px;
+  background: orange;
+
+}
+     </style>
+
+</head>
+
+<body>
+ <div class="container">  
+   <div class="left">我是左边</div>
+   <div class="middle">我是中间</div>
+   
+   <div class="right">我是右边</div>
+ </div>  
+</body>
+</html>

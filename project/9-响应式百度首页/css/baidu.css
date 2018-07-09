@@ -1,0 +1,325 @@
+
+     body{
+	       min-width: 800px;
+	       height: 100%;
+           min-height: 600px; 
+           background: white;
+         }
+    .phone{
+      display: none;
+    }
+    .wapper{
+    	   height: 100%;position: relative;
+    	   min-width: 800px;
+           min-height: 600px; 
+           
+    }
+    .body2{
+    	  width: 77px;
+	  	      height: 80px;
+	  	      background: white;
+	  	      float: right;
+	  	      padding-top: 10px;
+	  	      padding-left: 30px;
+	  	      text-align: center;
+	  	       color:red;
+	  	       list-style:none;
+         }
+    .menu1{
+              width: 67px;
+	  	      height: 20px;
+	  	      background: #317EF3;
+	  	      color:red;
+	  	      padding-right: 0;
+	  	      padding-left: 0;
+	  	      margin:0;
+	  	      text-decoration: none;
+	  	      list-style:none;
+         }
+    .menu1 ul{
+              margin:0;
+              padding: 0;
+              text-decoration: none;
+              width: 75px;
+              height: 70px;
+              color:red;
+              list-style:none;
+         }
+    .menu1 ul li{
+              position: relative;
+              float:left;
+              list-style: none;
+              padding: 0;border: 0px solid;
+              font-size: 14px;
+              width: 70px;
+              height: 100%;            
+              margin:0;
+              line-height: 20px;
+              text-decoration: none;
+              color:red;
+         }
+    .menu1 ul li ul{
+             display: none;
+
+             padding: 0px;border: 1px solid #F0F0F0;
+             text-decoration: blink;
+             background: #F9F9F9;
+             margin:0px;
+         }
+    .menu1 ul li ul a {text-decoration: none;}
+    .menu1 ul li:hover ul{
+             display: block;
+             position: absolute;
+             left: 0px;top: 21px;
+         }
+    .more1{
+       	     color: white;
+       	     text-decoration:none;
+         }
+
+    .more2{
+       	    height: 100px;
+       	    width: 100px;
+       	    background: #F9F9F9;
+       	    position: relative;
+       	    left: -18px;
+       	    top:-43px;
+       	    text-decoration: none;
+         }
+
+    .rice{
+         	height: 50px;
+       	    width: 100px;
+       	    background: #F9F9F9 ;
+       	    position: relative;
+       	    left: -18px;
+       	    top:-43px;
+       	    text-decoration: none;
+       	    padding-top: 10px;
+       	    padding-bottom: 20px;
+            border-top:solid 1px  #F0F0F0;
+         }
+    .mus{
+         	height: 50px;
+       	    width: 100px;
+       	    background: #F9F9F9 ;
+       	    position: relative;
+       	    left: -18px;
+       	    top:-35px;
+       	    padding-top: 10px;
+       	    padding-bottom: 20px;
+            border-top:solid 1px  #F0F0F0;
+         }
+    .pic{
+         	height: 50px;
+       	    width: 100px;
+       	    background: #F9F9F9 ;
+       	    position: relative;
+       	    left: -18px;
+       	    top:-27px;
+       	    padding-top: 10px;
+       	    padding-bottom: 20px;
+            border-top:solid 1px  #F0F0F0;
+         }
+    .know{
+         	height: 50px;
+       	    width: 100px;
+       	    background: #F9F9F9 ;
+       	    position: relative;
+       	    left: -18px;
+       	    top:-16px;
+            padding-top: 10px;
+       	    padding-bottom: 20px;
+            border-top:solid 1px  #F0F0F0;
+         }
+    .ku{
+         	height: 50px;
+       	    width: 100px;
+       	    background: #F9F9F9 ;
+       	    position: relative;
+       	    left: -18px;
+       	    top:-5px;
+            padding-top: 10px;
+       	    padding-bottom: 20px;
+            border-top:solid 1px  #F0F0F0;
+         }
+    .bang{
+         	height: 50px;
+       	    width: 100px;
+       	    background: #F9F9F9 ;
+       	    position: relative;
+       	    left: -18px;
+       	    top:6px;
+            padding-top: 10px;
+       	    padding-bottom: 20px;
+            border-top:solid 1px  #F0F0F0;
+         }
+    .all{
+         	height: 50px;
+       	    width: 100px;
+       	    background: #F9F9F9 ;
+       	    position: relative;
+       	    left: -18px;
+       	    top:17px;
+            padding-top: 10px;
+       	    padding-bottom: 25px;
+            border-top:solid 1px  #F0F0F0;
+         }
+    
+
+    .set{
+          width: 60px;
+	  	  height: 45px;
+	  	  background: white;
+	  	  padding-top:10px;
+	  	  float: right;
+	  	  text-align: center;
+	  	  color: gray;
+         }
+    .set ul{
+              margin:0px;
+              padding: 0px;
+              text-decoration: blink;
+              width: 100px;
+              height: 20px;
+         }
+    .set ul li{
+              position: relative;
+              float:left;
+              list-style: none;
+              padding: 2px;border: 0px solid;
+              font-size: 14px;
+              width: 95px;
+              height: 100%;
+              text-align: center;
+              margin:0px;
+              line-height: 15px;
+              text-decoration: none;
+         }
+    .set ul li ul{
+             display: none;
+             padding: 0px;border: 0px solid #F0F0F0;
+             text-decoration: none;
+             background: bule;
+         }
+    .set ul li:hover ul{
+             display: block;
+               line-height: 10px;
+               
+             position: absolute;
+             left: 0px;top: 21px;
+         }
+    .set ul li ul a {text-decoration: none;
+             color: gray;}
+   
+    .navheader{
+     	float: right;
+     	position: relative;
+     	margin-top: 8px;
+     	_top: 80px;
+         }
+    _navheader{
+     	
+     	position: relative;
+     	margin-top: 80px;
+         }
+    .navheader a{
+     	margin-left: 13px;
+        font-size: 14px;
+        color: black;
+
+    }
+    .navheader a:hover{
+    	color: blue;
+    }
+
+    .logo{
+     	width:800px;
+     	height: 300px;
+     	position: absolute;
+     	left: 50%;text-align: center;
+     	margin-left: -400px;/**/
+     	margin-top: 100px;
+     	background: white;
+     	_margin-left:-200px;
+         }
+    .logo img{
+     	  width: 270px;
+     	  height: 129px;
+
+         }
+     form{
+     	width: 684px;
+     	margin:10px auto;
+     	position: relative;
+     }
+     form span{
+     	width: 20px;
+     	height: 20px;
+     	position: absolute;
+     	right: 138px;
+     	top:10px;
+     	 background: white url(../image/camera_up.png) no-repeat;
+     	cursor: pointer;
+      background-position: absolute;
+      background-margin-top:5px; 
+     }
+     form span:hover{
+     	background-position:0 -20px; 
+     }
+    .text1{
+     	  width: 550px;
+     	  height: 36px;
+           line-height: 9px;
+     	   background-position:520px 10px;
+     	   padding-top: 0px;
+     	   margin-top: 1px;
+     	   border: 1px solid red;
+     	   outline: 0;
+     	   text-indent: 7px;
+     	   line-height: 36px;
+     	   float: left;
+         }
+      .text1:hover{
+           border-color: blue; 
+      }
+      .text1:focus{
+      	  border-color: yellow; 
+      }
+    .button1{
+     	  width: 130px;
+     	  height: 39px;
+     	  position: relative;
+     	  margin-left: 0px;
+     	  margin-bottom: -5px;
+     	  top: 1px;
+     	  background: #317EF3;
+     	  border: 0px solid;
+     	  border-bottom:  0px solid #317EF3; 
+     	  margin-top:0px;
+     	  color: white;
+     	  font-size: 15px;
+     	  float: left;
+         }
+    .qrcode{
+     	position: absolute;
+     	left: 50%;
+     	margin-left: -50px;
+     	top:450px;
+     	text-align: center;
+     	font-size: 12px;
+         }
+    .navfooter{
+   	   position: absolute;
+   	   left: 50%;
+   	   margin-left: -240px;
+   	   top:550px;
+   	   text-align: center;
+       font-size: 12px;
+       line-height: 20px;
+       color: gray;
+         }
+    .navfooter a{
+     	margin-left: 10px;
+     	color: gray;
+         }
