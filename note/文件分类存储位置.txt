@@ -21,10 +21,13 @@
 9：webpack打包的详细记录在github--webpacktest文件夹里面
 10：aixos和socketio测试记录在E:socketiotest里面
 11：webpack完全成功的测试--在io中webpackstep，加上axios，加上soketio完全成功的，在io中socket，其他的都有问题
- 
 
 
 
+12:码云简历小项目的位置； 
+
+
+ 437532
 
 
 
