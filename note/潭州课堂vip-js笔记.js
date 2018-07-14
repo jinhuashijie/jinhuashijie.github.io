@@ -153,10 +153,81 @@
 
 
 
-第五节：7-13  
+第五节：7-13  面向对象：--应该是第三部分：
+1：对象：有多个相同属性时，一个共有对象，然后其他都是return和function造出来
+	比如：
+	var a={
+		name:'A',
+		age:12,
+		home:'china'
+	}
+	var b={
+		name:'B',
+		age:22,
+		home:'china'
+	}
+	var c={
+		name:'C',
+		age:17,
+		home:'china'
+	}
+	可以结合成这个样子
+	function test(a,b,c){
+		var obj={
+			name:a,
+			age:b,
+			home:c
+		}
+		return obj
+	}
+	var a=test('A',17,"china")
+	var b=test("B",20,"china")
+	console.log(a)  也能起到同样的效果，但是代码量少了
+2：一个函数自执行之后的默认返回值是undefined ，   函数自执行的this指向的window，
+new之后的this指向的是空对象，自执行之后返回的也是空对象
+    function test(a,b,c){
+			this.name=a,
+			this.age=b,
+			this.home=c
+	}
+	var a=new test('A',17,"china")
+	console.log(a)  得到同样的效果，这样代码更精简；
+	new用来帮我们创建对象；这个就是被称之为构造函数；
+	约定构造函数的首字母大写；
+3：工厂模式，new自带原料和产出，自己只需关注加工
+	就是在构造的模板函数里面带很多方法，跟jquery的$一样；
+4：构造函数的原型共用prototype
+	function test(a,b,c){
+		this.name=a,
+		this.age=b,
+		this.home=c
+		this.getName=function(){
+			console.log(this.name)
+		}
+	}
+	var t1=new test()
+	var t2=new test() 这个时候是相等的
+	console.log(t1.getname==t2.getname)
+	不能共用（私有方法，属性）的放在构造函数里面，公有属性放在原型里面--节省内存，面向对象的好处
+5：原型链；
+6：继承：私有属性；继承怎么写？es5写法，es6写法；原型继承，拷贝继承；
+	class Test{  //  类的写法。类不允许直接执行，跟构造函数是一样的；
+		//实例的私有属性，es6的写法
+		constructor(name,age){//
+			this.name=name;
+			this.age=age;
+		}//上面是构造函数，下面是原型
+		//原型不用写出去；，es6原型只能有方法，不能有属性；
+		sayName(){
+			console.log(this.name)
+		}
+	}
+	var t1= new Test("aa",20)
+	console.log(t1)
+	t1.sayName()
+    Test.prototype也可以添加原型属性；
 
-
-
+你好，我是极客学院同学，希望有机会分享开发方面的知识
 
 
 
