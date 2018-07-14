@@ -218,7 +218,7 @@ new之后的this指向的是空对象，自执行之后返回的也是空对象
 			this.age=age;
 		}//上面是构造函数，下面是原型
 		//原型不用写出去；，es6原型只能有方法，不能有属性；
-		sayName(){
+		sayName(){//一定要加的话要在外面使用prototype
 			console.log(this.name)
 		}
 	}
@@ -226,6 +226,24 @@ new之后的this指向的是空对象，自执行之后返回的也是空对象
 	console.log(t1)
 	t1.sayName()
     Test.prototype也可以添加原型属性；
+    //es6的继承方法；既要有构造函数属性，还要有原型属性，还要继承额外的新增的
+    class X extends Test{
+    	constructor(name,age){
+    		super(name,age)
+    		this.
+    	}
+    }
+第六节：设计模式：前人规定好的解决方案，第一步，第二步，第三步；
+1：多个设计模式配合在项目中，在开发项目中
+创建型，结构型，行为型；
+	1：单利模式：
+    
+
+
+
+
+
+
 
 你好，我是极客学院同学，希望有机会分享开发方面的知识
 
