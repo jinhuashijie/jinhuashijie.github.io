@@ -236,9 +236,51 @@ new之后的this指向的是空对象，自执行之后返回的也是空对象
 第六节：设计模式：前人规定好的解决方案，第一步，第二步，第三步；
 1：多个设计模式配合在项目中，在开发项目中
 创建型，结构型，行为型；
-	1：单利模式：
-    
+	1：单例模式：在构造函数下，new出来的对象是不相等的，而单例模式要变成相等的
+    class Tip{
+    	constructor(text){
+    		let oDiv=document.createElement("div")
+    		oDiv.style.cssText="position:fixed"
+    		oDiv.innerText=text
+    		document.body.appendChild(oDiv)
+    	}
+    	show(){
 
+    	}
+    }
+    new Tip("阿飞")
+    new Tip("狗蛋")
+    let Tip=(function(){
+		let ins=null;  //这个就放在了闭包里面；
+		class Fn{
+	    	constructor(text){
+	    		if(ins){
+	    			ins.oDiv.innerText=text  //这个div是共用的；
+	    			return ins   
+	    		}else{
+	    			this.oDiv=document.createElement("div")
+		    		this.oDiv.style.cssText="position:fixed"
+		    		this.oDiv.innerText=text
+		    		document.body.appendChild(this.oDiv)
+		    		console.log(this)//打印出的是Fn
+		    		ins=this  //ins为什么要等于this---this指向的Fn本身；
+	    		}
+		    		
+	    	}
+	    	show(){
+
+	    	}
+	    }
+	    return Fn
+	})()
+	let x=    new Tip("阿飞")  //--产出是成功的；
+	let y=    new Tip("狗蛋") //--第二次的时候只是运用了个不同的参数而已；
+	console.log(x===y)  //  这里返回的居然是true，居然是相等的，
+	x,y打印出来居然都是Fn这个函数，没有其他的区别，参数也跑掉了；
+    要用闭包来判断到底是存在还是不存在；这个div是否已经被创建过；
+    好处是节省内存，速度快；
+2：单例模式的通例：
+3：工厂模式；多个构造函数放在一个里面；最后返回一个新的类；利用switch判断的方式来return不同的构造函数
 
 
 
