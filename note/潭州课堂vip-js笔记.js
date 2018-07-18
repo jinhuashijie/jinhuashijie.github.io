@@ -285,23 +285,172 @@ new之后的this指向的是空对象，自执行之后返回的也是空对象
 第七节：最后一课：js的性能优化
 1：for循环的优化，可以提前定义length
 2：数组去重，采取倒序的方式
-let arr=[1,0,3,8,6,1,4,4,5,3,2]
-for(let i=arr.length;i>0;i--){
-	var x=arr[i]
-	for(let j=i-1;j>=0;j--){
+let arr=[1,0,3,8,6,4,4,4,5,3,2]
+let arr=[4,4,4]
+for(let i=arr.length-1;i>=0;i--){                    
+	// i 是倒序的下标；                              
+	console.log(arr.length)//长度肯定是变化了的；
+	var x=arr[i]                                     
+	for(let j=i-1;j>=0;j--){ 
+		//debugger;                        
 		if(x===arr[j]){
 			arr.splice(j,1)
 		}
 	}
 }
-console.log(arr)
+console.log(arr)//   是没有问题的；
 
 3：对象的合理分配；
-1：
+1：惰性实例化，结果缓存，享元模式，事件监听的回收，闭包的合理使用
 2： 手动垃圾回收，全局变量永远不会被回收；
+3：缓存：ajax结果的缓存，cookie缓存，本地缓存，正则表达式缓存；
+	正则表达式，常用的写成对象，对象占用堆内存；
+4：判断优化：条件的先后顺序；对象数组映射代替判断；
+let oWrap=document.getElementById('wrap')
+oWrap.onclick=function(){
+	console.log(1)
+}
+oWrap=null;  即便是定义为null，点击事件是还存在的；
 
 
-你好，我是极客学院同学，希望有机会分享开发方面的知识
+
+1：函数的执行顺序问题
+正常写法，顺序用var定义，也会顺序执行，同名的话，后面会覆盖前面的；
+var a=1;
+console.log(a);
+var a=2;
+console.log(a)
+打印结果是顺序执行1,2
+说明这是很纯粹的单线程，但是有同名函数时就不一样了；
+var a=1;
+console.log(a);
+function b(){
+    console.log(3)
+}
+b()
+var a=2;
+console.log(a)
+这种情况下，也是顺序执行的；也是按照单线程执行的；
+
+b()
+function b(){
+    console.log(3)
+}
+函数的顺序错乱也是能够正常执行的；
+
+var b=10;
+console.log(b)
+function b(){
+    console.log(3)
+}
+console.log(b)
+b()
+b=10可以正常打印出来，但是b的函数执行却报错说不是函数
+无论这个打印在前还是在后都能够打印出10，说明函数被覆盖了；
+
+var b=10;
+console.log(b)
+var b=function(){
+    console.log(3)
+}
+console.log(b)
+b()
+这个变量函数是顺序执行的；等于说定义函数会被变量替代；而变量函数却不会；
+
+
+var b=function(){
+    console.log(1)
+}
+b()
+function b(){
+    console.log(3)
+}
+b()
+打印出来全是1，说明定义函数会被变量函数所取代；
+
+b()
+var b=function(){
+    console.log(1)
+}
+b()
+function b(){
+    console.log(3)
+}
+b()
+但是最顶上的却打印出了3，说明顺序错乱的时候，会去找定义函数；
+
+b()
+var b=function(){console.log(1)}
+b()
+function b(){console.log(2)}
+b()
+var b=function(){console.log(3)}
+b()
+打印出2 1 1 3
+
+b()
+function b(){console.log(2)}
+b()
+var b=function(){console.log(1)}
+b()
+var b=function(){console.log(3)}
+b()
+打印出：2 2 1 3，同名变量会顺序覆盖函数，顺序错乱会去找函数，而不是找变量
+
+2：关于闭包o:简单理解：第一个条件：函数里嵌套函数；第二个条件：子函数引用了母函数的参数或者变量；
+第三个条件：内部函数对外部有持续的引用（子函数对母函数里的变量的持续引用；）；就是retrun出来，导致内部变量跑到window下，不会被回收；
+function a(){
+    var g=10;
+    function b(){
+         g++
+        console.log(g)
+    }
+    return b
+}
+var x=a()
+x()
+x()  //打印出来11,12，说明这个g没有被回收，
+var y=a()
+y()
+y()  //也是打印出11,12，说明虽然是引用了同一个，但是却生成两个作用域；
+g虽然被挂载到了全局变量，单肯定不在window下；
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
